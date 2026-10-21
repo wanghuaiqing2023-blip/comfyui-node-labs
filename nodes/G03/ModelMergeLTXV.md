@@ -4,6 +4,31 @@
 
 **状态：实验设计，未执行。** 下面是待检验的预期，不是已经获得的结果。标注“核对/探索”的分支需先确认本机实现，不能因没报错就签收。
 
+## 节点作用与常见使用场景
+
+**主要作用：按 LTX 层结构合并权重。**
+
+- 研究同架构权重组合并保存可回读结果时，用于按 LTX 层结构合并权重。
+
+## 前置节点与输入依赖
+
+“必需”指本节点需要该输入，不表示必须使用表中的某个指定节点。多个来源通常是替代方案；可选输入只在相应场景接入。来源列给出节点页面与输出端口，便于先做上游实验。
+
+**依据边界：** 基于固定索引的端口契约和场景整理，未逐条实测接线。模型、条件和潜变量的来源明确标为兼容性候选；动态端口必须展开核对。详见[依赖标记说明](../../guides/node-page-contract.md)。
+
+| 本节点输入 | 必需性 | 前置节点 → 输出端口 / 输入来源 | 条件与限制 |
+|---|---|---|---|
+| `model1` / `MODEL` | 必需 | [UNETLoader](../B01/UNETLoader.md) → `MODEL`（兼容性候选）；[CheckpointLoaderSimple](../B01/CheckpointLoaderSimple.md) → `MODEL`（兼容性候选） | 接口来源示例，可选其一或使用等价上游；不是要求全部连接。 必须核对模型家族、权重、张量布局及阶段；端口同名不保证兼容。 |
+| `model2` / `MODEL` | 必需 | [UNETLoader](../B01/UNETLoader.md) → `MODEL`（兼容性候选）；[CheckpointLoaderSimple](../B01/CheckpointLoaderSimple.md) → `MODEL`（兼容性候选） | 接口来源示例，可选其一或使用等价上游；不是要求全部连接。 必须核对模型家族、权重、张量布局及阶段；端口同名不保证兼容。 |
+
+**文本、数值与选项输入：** `patchify_proj.`、`adaln_single.`、`caption_projection.`、`transformer_blocks.0.`、`transformer_blocks.1.`、`transformer_blocks.2.`、`transformer_blocks.3.`、`transformer_blocks.4.`、`transformer_blocks.5.`、`transformer_blocks.6.`、`transformer_blocks.7.`、`transformer_blocks.8.`、`transformer_blocks.9.`、`transformer_blocks.10.`、`transformer_blocks.11.`、`transformer_blocks.12.`、`transformer_blocks.13.`、`transformer_blocks.14.`、`transformer_blocks.15.`、`transformer_blocks.16.`、`transformer_blocks.17.`、`transformer_blocks.18.`、`transformer_blocks.19.`、`transformer_blocks.20.`、`transformer_blocks.21.`、`transformer_blocks.22.`、`transformer_blocks.23.`、`transformer_blocks.24.`、`transformer_blocks.25.`、`transformer_blocks.26.`、`transformer_blocks.27.`、`scale_shift_table`、`proj_out.`。按实际界面填写；若端口要求连线或支持“转为输入”，可连接同类型数据源。它们不自动构成必须先学习 Primitive 节点的依赖。默认值见下方输入清单。
+
+### 建议先学哪些节点
+
+先学习本次所选输入来源对应的节点：[UNETLoader](../B01/UNETLoader.md)、[CheckpointLoaderSimple](../B01/CheckpointLoaderSimple.md)。只选择当前分支需要的来源，不要求全部完成。
+
+学习顺序与运行依赖分开：所属实验组负责能力安排，上表负责本节点输入；节点可以重复用于多个流程，因此这些来源示例不是全局无环拓扑，也不允许把同一实例输出接回自身。
+
 ## 基准与接线
 
 准备相同架构、相同参数key/shape的A/B；最好A与B只有一组已知非零权重差，禁止原地覆盖源模型。

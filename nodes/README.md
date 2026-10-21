@@ -1,8 +1,18 @@
 # 逐节点实验目录
 
-每个节点都有独立实验卡；先按[实验组依赖](../labs/README.md)准备上游，再执行卡内A/B对照。**所有用例尚未运行；覆盖设计不等于验证通过。**
+每个节点有唯一的主实验页面，包含常见使用场景、逐输入前置节点、观察预期和参数对照。实验组页面仅组织学习顺序。**所有用例尚未运行；覆盖设计不等于验证通过。**
 
-[测量规则](../guides/observable-results.md) · [结果模板](../templates/node-experiment-record.md)
+[依赖标记说明](../guides/node-page-contract.md) · [测量规则](../guides/observable-results.md) · [结果模板](../templates/node-experiment-record.md)
+
+## 前端节点与画布功能
+
+| 对象 | 独立实验页 |
+|---|---|
+| Reroute | [重路由](frontend/Reroute.md) |
+| Note | [注释](frontend/Note.md) |
+| Group（画布分组功能） | [分组](frontend/Group.md) |
+
+保存与恢复属于跨功能实验，见 [U04](../labs/00-frontend/U04.md)。以下为固定索引中的 639 个后端节点。
 
 ## A01 建立观察与保存出口
 

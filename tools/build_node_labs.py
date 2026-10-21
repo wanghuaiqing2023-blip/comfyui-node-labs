@@ -5,11 +5,43 @@ import re
 from pathlib import Path
 from urllib.parse import quote
 from lab_cases import CASES
+from node_context import build_context
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = json.loads((ROOT/'data/node-schemas.json').read_text())
 GROUPS = json.loads((ROOT/'data/experiments.json').read_text())
 MEMBERS = {n: g for g in GROUPS for n in g['nodes']}
+CONTEXT = build_context(SCHEMAS, GROUPS)
+
+def context_lines(k):
+    c = CONTEXT[k]
+    def link(name):
+        return f'[{name}](../{MEMBERS[name]["id"]}/{slug(name)}.md)'
+    lines = ['## 节点作用与常见使用场景', '', f'**主要作用：{c["operation"]}。**', '']
+    lines += [f'- {s}' for s in c['scenarios']]
+    lines += ['', '## 前置节点与输入依赖', '',
+              '“必需”指本节点需要该输入，不表示必须使用表中的某个指定节点。多个来源通常是替代方案；可选输入只在相应场景接入。来源列给出节点页面与输出端口，便于先做上游实验。', '',
+              '**依据边界：** 基于固定索引的端口契约和场景整理，未逐条实测接线。模型、条件和潜变量的来源明确标为兼容性候选；动态端口必须展开核对。详见[依赖标记说明](../../guides/node-page-contract.md)。', '',
+              '| 本节点输入 | 必需性 | 前置节点 → 输出端口 / 输入来源 | 条件与限制 |', '|---|---|---|---|']
+    rows = [d for d in c['dependencies'] if d['kind'] != 'parameter']
+    for d in rows:
+        sources = '；'.join(f'{link(s["node"])} → `{s["output"]}`' + ('（兼容性候选）' if s['basis']=='port_candidate' else '（展开后核对）' if s['basis']=='dynamic_candidate' else '') for s in d['sources'])
+        if not sources:
+            sources = {'widget':'本节点前端控件','dynamic':'本节点模式选择 / 展开的子输入'}.get(d['kind'],'外部来源或同模板上游待核对')
+        req = {'required':'必需','optional':'可选'}[d['requirement']]
+        lines.append(f'| `{d["input"]}` / `{d["type"]}` | {req} | {sources} | {esc(d["note"])} |')
+    if not rows:
+        lines.append('| 无已声明的对象连线输入 | — | 从本节点参数、文件或控件开始 | 不强制依赖另一个计算节点；外部文件/权重仍需准备。 |')
+    scalar = [d['input'] for d in c['dependencies'] if d['kind']=='parameter']
+    if scalar:
+        lines += ['', '**文本、数值与选项输入：** '+ '、'.join(f'`{s}`' for s in scalar)+ '。按实际界面填写；若端口要求连线或支持“转为输入”，可连接同类型数据源。它们不自动构成必须先学习 Primitive 节点的依赖。默认值见下方输入清单。']
+    lines += ['', '### 建议先学哪些节点', '']
+    if c['learning_nodes']:
+        lines += ['先学习本次所选输入来源对应的节点：'+ '、'.join(link(s) for s in c['learning_nodes'])+'。只选择当前分支需要的来源，不要求全部完成。']
+    else:
+        lines += ['没有已确定的普通上游节点可列为统一学习前置；先准备本页参数/资源，并核对上表标出的动态输入或来源缺口。']
+    lines += ['', '学习顺序与运行依赖分开：所属实验组负责能力安排，上表负责本节点输入；节点可以重复用于多个流程，因此这些来源示例不是全局无环拓扑，也不允许把同一实例输出接回自身。', '']
+    return lines
 
 def case(change, expected, observe):
     return dict(change=change, expected=expected, observe=observe)
@@ -164,6 +196,7 @@ def render():
         npath=ROOT/path;npath.parent.mkdir(parents=True,exist_ok=True)
         lines=[f'# {k}：可观察实验', '', f'[所属实验 {g["id"]}](../../{g["path"]}) · [逐节点目录](../README.md) · [测量与判定](../../guides/observable-results.md)', '',
                '**状态：实验设计，未执行。** 下面是待检验的预期，不是已经获得的结果。标注“核对/探索”的分支需先确认本机实现，不能因没报错就签收。', '',
+               *context_lines(k),
                '## 基准与接线', '', spec['setup'], '',
                '先完成所属实验的前置依赖。以下未列为变量的参数使用本机默认并截图保存；每次只改用例指定的一项。多种节点共用的实验中，只执行本节点实际具有的参数/操作。', '',
                '## 可观察的预期与参数对照', '', '| 用例 | 唯一变化/操作 | 预期结果 | 怎么观察、如何判定 |','|---|---|---|---|']
@@ -188,8 +221,9 @@ def render():
         print('UNASSIGNED:', ', '.join(unknown))
         raise SystemExit(1)
     (ROOT/'data/node-experiments.json').write_text(json.dumps(records,ensure_ascii=False,indent=2)+'\n')
+    (ROOT/'data/node-context.json').write_text(json.dumps(list(CONTEXT.values()),ensure_ascii=False,indent=2)+'\n')
     lookup={r['class_name']:r for r in records}
-    index=['# 逐节点实验目录','','每个节点都有独立实验卡；先按[实验组依赖](../labs/README.md)准备上游，再执行卡内A/B对照。**所有用例尚未运行；覆盖设计不等于验证通过。**','','[测量规则](../guides/observable-results.md) · [结果模板](../templates/node-experiment-record.md)','']
+    index=['# 逐节点实验目录','','每个节点有唯一的主实验页面，包含常见使用场景、逐输入前置节点、观察预期和参数对照。实验组页面仅组织学习顺序。**所有用例尚未运行；覆盖设计不等于验证通过。**','','[依赖标记说明](../guides/node-page-contract.md) · [测量规则](../guides/observable-results.md) · [结果模板](../templates/node-experiment-record.md)', '', '## 前端节点与画布功能', '', '| 对象 | 独立实验页 |', '|---|---|', '| Reroute | [重路由](frontend/Reroute.md) |', '| Note | [注释](frontend/Note.md) |', '| Group（画布分组功能） | [分组](frontend/Group.md) |', '', '保存与恢复属于跨功能实验，见 [U04](../labs/00-frontend/U04.md)。以下为固定索引中的 639 个后端节点。','']
     for g in GROUPS:
         index += [f'## {g["id"]} {g["title"]}', '', '| 节点 | 用例数 |','|---|---|']
         links=[]

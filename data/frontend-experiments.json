@@ -2,7 +2,7 @@
   {
     "id": "U01",
     "title": "Reroute：连线整理与数据路径",
-    "path": "labs/00-frontend/U01.md",
+    "path": "nodes/frontend/Reroute.md",
     "prerequisites": [],
     "setup": "labs/00-frontend/README.md",
     "status": "not_run",
@@ -17,7 +17,7 @@
   {
     "id": "U02",
     "title": "Note：说明文字与执行输入",
-    "path": "labs/00-frontend/U02.md",
+    "path": "nodes/frontend/Note.md",
     "prerequisites": [
       "U01"
     ],
@@ -33,7 +33,7 @@
   {
     "id": "U03",
     "title": "Group：分组外观与节点组织",
-    "path": "labs/00-frontend/U03.md",
+    "path": "nodes/frontend/Group.md",
     "prerequisites": [
       "U01",
       "U02"

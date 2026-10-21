@@ -12,3 +12,5 @@
 - [H3 关键端口连接表](h3-connections.md)
 - [BuildPoseFile 的完整实验依赖](pose-export.md)
 - [实验记录模板](recording.md)
+
+- [单节点页面与前置依赖标记](node-page-contract.md)

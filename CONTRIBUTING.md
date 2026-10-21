@@ -25,3 +25,7 @@ python3 tools/validate.py
 ## 前端画布实验维护
 
 前端实验手工维护于 `labs/00-frontend/`，清单为 `data/frontend-experiments.json`，使用独立 U 编号，不加入固定 639 个后端节点索引。新增或修改时同步清单、目录、学习路线及用例编号。每个用例须有操作变量、明确预期、观察标准；记录编辑器版本及入口差异。设计状态为 `not_run`；用户实测证据使用前端记录模板另存，不能由结构检查自动标记为通过。
+
+## 常见场景与逐输入依赖
+
+后端节点的用途、场景与依赖规则维护在 `tools/node_context.py`，由 `tools/build_node_labs.py` 生成页面和 `data/node-context.json`。直接输入依赖须写来源节点、输出端口、必需/可选关系及兼容条件；不把前端控件误写为计算节点。输入来源示例不等于强制使用该节点，不给仅类型匹配的候选加“实测兼容”结论。前端 Reroute、Note、Group 主页在 `nodes/frontend/`，U01—U03 只作导航；不要复制出两份独立维护的同节点实验。

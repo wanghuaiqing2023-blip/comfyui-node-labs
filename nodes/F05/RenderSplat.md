@@ -4,6 +4,33 @@
 
 **状态：实验设计，未执行。** 下面是待检验的预期，不是已经获得的结果。标注“核对/探索”的分支需先确认本机实现，不能因没报错就签收。
 
+## 节点作用与常见使用场景
+
+**主要作用：渲染 splat 检查结果。**
+
+- 检查、变换或交付 Gaussian Splat时，用于渲染 splat 检查结果。
+
+## 前置节点与输入依赖
+
+“必需”指本节点需要该输入，不表示必须使用表中的某个指定节点。多个来源通常是替代方案；可选输入只在相应场景接入。来源列给出节点页面与输出端口，便于先做上游实验。
+
+**依据边界：** 基于固定索引的端口契约和场景整理，未逐条实测接线。模型、条件和潜变量的来源明确标为兼容性候选；动态端口必须展开核对。详见[依赖标记说明](../../guides/node-page-contract.md)。
+
+| 本节点输入 | 必需性 | 前置节点 → 输出端口 / 输入来源 | 条件与限制 |
+|---|---|---|---|
+| `splat` / `SPLAT` | 必需 | [File3DToSplat](../F05/File3DToSplat.md) → `splat`；[VAEDecodeTripoSplat](../E19/VAEDecodeTripoSplat.md) → `splat` | 接口来源示例，可选其一或使用等价上游；不是要求全部连接。 |
+| `background` / `COLOR` | 必需 | 本节点前端控件 | 颜色控件（按当前界面填写）提供状态；不是缺失的模型加载器。 |
+| `bg_image` / `IMAGE` | 可选 | [LoadImage](../A01/LoadImage.md) → `IMAGE` | 接口来源示例，可选其一或使用等价上游；不是要求全部连接。 |
+| `camera_info` / `LOAD3D_CAMERA` | 可选 | [CreateCameraInfo](../F01/CreateCameraInfo.md) → `camera_info`；[Load3DAdvanced](../F01/Load3DAdvanced.md) → `camera_info` | 接口来源示例，可选其一或使用等价上游；不是要求全部连接。 |
+
+**文本、数值与选项输入：** `width`、`height`、`frames`、`splat_scale`、`sharpen`、`headlight_shading`、`opacity_threshold`、`render_style`。按实际界面填写；若端口要求连线或支持“转为输入”，可连接同类型数据源。它们不自动构成必须先学习 Primitive 节点的依赖。默认值见下方输入清单。
+
+### 建议先学哪些节点
+
+先学习本次所选输入来源对应的节点：[File3DToSplat](../F05/File3DToSplat.md)、[VAEDecodeTripoSplat](../E19/VAEDecodeTripoSplat.md)、[LoadImage](../A01/LoadImage.md)、[CreateCameraInfo](../F01/CreateCameraInfo.md)、[Load3DAdvanced](../F01/Load3DAdvanced.md)。只选择当前分支需要的来源，不要求全部完成。
+
+学习顺序与运行依赖分开：所属实验组负责能力安排，上表负责本节点输入；节点可以重复用于多个流程，因此这些来源示例不是全局无环拓扑，也不允许把同一实例输出接回自身。
+
 ## 基准与接线
 
 G1或已知尺度S1，固定CreateCameraInfo和背景。
