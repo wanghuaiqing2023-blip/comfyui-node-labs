@@ -2,6 +2,7 @@
 
 [项目首页](../README.md)
 
+- [前端画布入门与 RunningHub 环境核对](../labs/00-frontend/README.md)
 - [依据与版本边界](sources.md)
 - [两种依赖都要看](dependencies.md)
 - [能力阶段与通关标准](learning-path.md)

@@ -62,6 +62,37 @@ while len(done) < len(groups):
         errors.append('Prerequisite cycle or unresolved dependency')
         break
     done.update(ready)
+frontend = json.loads((root / 'data/frontend-experiments.json').read_text())
+frontend_ids = {g['id'] for g in frontend}
+if len(frontend) != len(frontend_ids):
+    errors.append('Duplicate frontend experiment IDs')
+frontend_cases = set()
+for group in frontend:
+    page = root / group['path']
+    if not page.is_file() or not (root / group['setup']).is_file():
+        errors.append(f'Missing frontend page or setup: {group["id"]}')
+        continue
+    if group['status'] != 'not_run':
+        errors.append(f'Frontend design must not claim execution: {group["id"]}')
+    if not group['cases']:
+        errors.append(f'Empty frontend cases: {group["id"]}')
+    for case_id in group['cases']:
+        if case_id in frontend_cases:
+            errors.append(f'Duplicate frontend case: {case_id}')
+        frontend_cases.add(case_id)
+        rows = [line for line in page.read_text().splitlines() if line.startswith(f'| {case_id} ')]
+        if len(rows) != 1 or len(rows[0].split('|')) != 6 or not all(x.strip() for x in rows[0].split('|')[1:-1]):
+            errors.append(f'Frontend case requires operation, expectation and observation: {case_id}')
+    for dep in group['prerequisites']:
+        if dep not in frontend_ids:
+            errors.append(f'Unknown frontend prerequisite: {group["id"]} -> {dep}')
+frontend_done = set()
+while len(frontend_done) < len(frontend_ids):
+    ready = [g['id'] for g in frontend if g['id'] not in frontend_done and set(g['prerequisites']) <= frontend_done]
+    if not ready:
+        errors.append('Frontend prerequisite cycle or unresolved dependency')
+        break
+    frontend_done.update(ready)
 link_count = 0
 for page in root.rglob('*.md'):
     body = re.sub(r'```[\s\S]*?```', '', page.read_text())
@@ -77,3 +108,4 @@ if errors:
     print('\n'.join(errors), file=sys.stderr)
     sys.exit(1)
 print(f'PASS: {len(groups)} groups, {len(nodes)} nodes, {len(cards)} cards, {sum(len(c["cases"]) for c in cards)} cases, acyclic prerequisites, {link_count} relative links; no ComfyUI execution claimed')
+print(f'PASS: {len(frontend)} frontend groups, {len(frontend_cases)} cases, acyclic prerequisites; no RunningHub execution claimed')

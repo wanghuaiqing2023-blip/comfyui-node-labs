@@ -1,0 +1,69 @@
+[
+  {
+    "id": "U01",
+    "title": "Reroute：连线整理与数据路径",
+    "path": "labs/00-frontend/U01.md",
+    "prerequisites": [],
+    "setup": "labs/00-frontend/README.md",
+    "status": "not_run",
+    "cases": [
+      "U01-01",
+      "U01-02",
+      "U01-03",
+      "U01-04",
+      "U01-05"
+    ]
+  },
+  {
+    "id": "U02",
+    "title": "Note：说明文字与执行输入",
+    "path": "labs/00-frontend/U02.md",
+    "prerequisites": [
+      "U01"
+    ],
+    "setup": "labs/00-frontend/README.md",
+    "status": "not_run",
+    "cases": [
+      "U02-01",
+      "U02-02",
+      "U02-03",
+      "U02-04"
+    ]
+  },
+  {
+    "id": "U03",
+    "title": "Group：分组外观与节点组织",
+    "path": "labs/00-frontend/U03.md",
+    "prerequisites": [
+      "U01",
+      "U02"
+    ],
+    "setup": "labs/00-frontend/README.md",
+    "status": "not_run",
+    "cases": [
+      "U03-01",
+      "U03-02",
+      "U03-03",
+      "U03-04",
+      "U03-05"
+    ]
+  },
+  {
+    "id": "U04",
+    "title": "保存、恢复与 UI/API 导出",
+    "path": "labs/00-frontend/U04.md",
+    "prerequisites": [
+      "U01",
+      "U02",
+      "U03"
+    ],
+    "setup": "labs/00-frontend/README.md",
+    "status": "not_run",
+    "cases": [
+      "U04-01",
+      "U04-02",
+      "U04-03",
+      "U04-04"
+    ]
+  }
+]
