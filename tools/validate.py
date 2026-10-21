@@ -12,6 +12,25 @@ nodes = json.loads((root / 'data/nodes.json').read_text())
 errors = []
 by_id = {g['id']: g for g in groups}
 node_ids = {n['class_name'] for n in nodes}
+cards = json.loads((root / 'data/node-experiments.json').read_text())
+schemas = json.loads((root / 'data/node-schemas.json').read_text())
+if len(cards) != 639 or {n['class_name'] for n in cards} != node_ids:
+    errors.append('Expected one experiment card for each of 639 nodes')
+if len(schemas) != 639 or {n['class_name'] for n in schemas} != node_ids:
+    errors.append('Schema coverage differs from node index')
+for card in cards:
+    p = root / card['path']
+    if not p.is_file():
+        errors.append(f'Missing node card: {card["path"]}')
+        continue
+    if not card['cases']:
+        errors.append(f'Empty cases: {card["class_name"]}')
+    for case in card['cases']:
+        for field in ('change', 'expected', 'observe'):
+            if not case.get(field, '').strip():
+                errors.append(f'Missing concrete case field: {card["class_name"]}/{field}')
+    if card['status'] != 'not_run':
+        errors.append(f'Design generation must not claim execution: {card["class_name"]}')
 if len(groups) != len(by_id) or len(groups) != 78:
     errors.append('Expected 78 unique experiment groups')
 if len(nodes) != len(node_ids) or len(nodes) != 639:
@@ -57,4 +76,4 @@ for page in root.rglob('*.md'):
 if errors:
     print('\n'.join(errors), file=sys.stderr)
     sys.exit(1)
-print(f'PASS: {len(groups)} experiment groups, {len(nodes)} nodes, acyclic prerequisites, {link_count} relative links')
+print(f'PASS: {len(groups)} groups, {len(nodes)} nodes, {len(cards)} cards, {sum(len(c["cases"]) for c in cards)} cases, acyclic prerequisites, {link_count} relative links; no ComfyUI execution claimed')

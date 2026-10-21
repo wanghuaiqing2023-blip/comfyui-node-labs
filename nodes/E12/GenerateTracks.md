@@ -1,0 +1,59 @@
+# GenerateTracks：可观察实验
+
+[所属实验 E12](../../labs/05-model-families/E12.md) · [逐节点目录](../README.md) · [测量与判定](../../guides/observable-results.md)
+
+**状态：实验设计，未执行。** 下面是待检验的预期，不是已经获得的结果。标注“核对/探索”的分支需先确认本机实现，不能因没报错就签收。
+
+## 基准与接线
+
+宽高512×384，24帧；单条轨迹从(64,96)到(448,288)；坐标来源节点用显式数组提供。
+
+先完成所属实验的前置依赖。以下未列为变量的参数使用本机默认并截图保存；每次只改用例指定的一项。多种节点共用的实验中，只执行本节点实际具有的参数/操作。
+
+## 可观察的预期与参数对照
+
+| 用例 | 唯一变化/操作 | 预期结果 | 怎么观察、如何判定 |
+|---|---|---|---|
+| E12/GenerateTracks/01 | 轨迹终点改成(64,288) | 可视化终点x应由448变为64；起点保持；帧索引与坐标对应。 | 不经过扩散模型，先检查原始轨迹和叠加图。 |
+| E12/GenerateTracks/02 | 两条轨迹合并 | 轨迹数量相加，不能把两条首尾串成一条；可视化颜色/粗细改变不应改坐标。 | 读轨迹维度及首末坐标。 |
+
+## 实际输入清单
+
+此表来自固定版本索引；不是所有参数组合均已覆盖。动态下拉/动态增长端口必须在本机展开并补录子字段，顶层名字不能代表其所有分支。hidden字段由运行时提供，不作为手填实验变量。
+
+| 输入 | 类型 | 必需性 | 索引中的默认值/范围/提示 |
+|---|---|---|---|
+| width | INT | required | 默认 832；最小 16；最大 4096；步长 16 |
+| height | INT | required | 默认 480；最小 16；最大 4096；步长 16 |
+| start_x | FLOAT | required | 默认 0.0；最小 0.0；最大 1.0；步长 0.01；源码提示：Normalized X coordinate (0-1) for start position. |
+| start_y | FLOAT | required | 默认 0.0；最小 0.0；最大 1.0；步长 0.01；源码提示：Normalized Y coordinate (0-1) for start position. |
+| end_x | FLOAT | required | 默认 1.0；最小 0.0；最大 1.0；步长 0.01；源码提示：Normalized X coordinate (0-1) for end position. |
+| end_y | FLOAT | required | 默认 1.0；最小 0.0；最大 1.0；步长 0.01；源码提示：Normalized Y coordinate (0-1) for end position. |
+| num_frames | INT | required | 默认 81；最小 1；最大 1024 |
+| num_tracks | INT | required | 默认 5；最小 1；最大 100 |
+| track_spread | FLOAT | required | 默认 0.025；最小 0.0；最大 1.0；步长 0.001；源码提示：Normalized distance between tracks. Tracks are spread perpendicular to the motion direction. |
+| bezier | BOOLEAN | required | 默认 False；源码提示：Enable Bezier curve path using the mid point as control point. |
+| mid_x | FLOAT | required | 默认 0.5；最小 0.0；最大 1.0；步长 0.01；源码提示：Normalized X control point for Bezier curve. Only used when 'bezier' is enabled. |
+| mid_y | FLOAT | required | 默认 0.5；最小 0.0；最大 1.0；步长 0.01；源码提示：Normalized Y control point for Bezier curve. Only used when 'bezier' is enabled. |
+| interpolation | COMBO | required | 源码提示：Controls the timing/speed of movement along the path. |
+| track_mask | MASK | optional | 源码提示：Optional mask to indicate visible frames. |
+
+## 输出检查点
+
+| 输出端口 | 类型 |
+|---|---|
+| TRACKS | TRACKS |
+| track_length | INT |
+
+## 验收与记录
+
+逐用例记录 `PASS / FAIL / BLOCKED / INCONCLUSIVE`，附A/B参数、工作流、实际输出和证据。确定性项按数值/形状/位置核对；随机生成项按预先定义的属性计分。没有变化时先排除缓存、未连接消费端、输入缺乏对比特征、错误分支和未加载权重。
+
+若用例需要查看tensor/metadata而目前只有图片预览，该项记 `BLOCKED_OBSERVATION`。不要用“看起来差不多”替代张量级断言；可按[测量指南](../../guides/observable-results.md)在源码断点读取。
+
+复制[结果模板](../../templates/node-experiment-record.md)到 records；初始环境/基准失败时先修复，后续参数对照暂不执行。
+
+## 依据与版本
+
+- 索引模块：`comfy_extras.nodes_wanmove`。接口依据：[固定索引快照](https://github.com/wanghuaiqing2023-blip/comfyui-learning-hub/blob/3e2e4c43e778e41a9bc577edd8ee3d25ad095471/docs/01-%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8/ComfyUI-%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/%E8%8A%82%E7%82%B9%E6%89%8B%E5%86%8C/03-%E5%85%A8%E9%83%A8%E5%86%85%E7%BD%AE%E8%8A%82%E7%82%B9%E7%B4%A2%E5%BC%95.md)。
+- 行为预期含公式推导、接口契约和实验假设；不等于全部逐函数核实。已核对公式及版本差异见[依据清单](../../guides/expectation-sources.md)。

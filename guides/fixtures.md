@@ -15,4 +15,4 @@
 | 三维素材 G2 | 有已知孔洞/重复顶点的网格，棋盘纹理 | 拓扑、UV、法线与烘焙 |
 | Splat S1 | 已验证可读的 Gaussian splat 文件 | splat 属性、转换与渲染 |
 
-这些是素材要求，不表示本次已生成或附带了这些素材。除已知坐标/编号等确定性图案外，优先用现有文件减少准备成本。
+基础确定性素材可以通过 `python3 tools/make_fixtures.py --out input/node-labs` 创建，详见[测量指南](observable-results.md)。三维模型、splat、真实人体视频和模型权重仍需自行准备。素材脚本的校验不代表任何ComfyUI节点已实测。

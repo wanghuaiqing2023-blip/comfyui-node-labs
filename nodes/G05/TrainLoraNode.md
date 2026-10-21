@@ -1,0 +1,68 @@
+# TrainLoraNode：可观察实验
+
+[所属实验 G05](../../labs/07-advanced/G05.md) · [逐节点目录](../README.md) · [测量与判定](../../guides/observable-results.md)
+
+**状态：实验设计，未执行。** 下面是待检验的预期，不是已经获得的结果。标注“核对/探索”的分支需先确认本机实现，不能因没报错就签收。
+
+## 基准与接线
+
+3张自有小图+同一标识caption；匹配模型；固定训练seed；先steps=2确认闭环，再做10/20步小实验。
+
+先完成所属实验的前置依赖。以下未列为变量的参数使用本机默认并截图保存；每次只改用例指定的一项。多种节点共用的实验中，只执行本节点实际具有的参数/操作。
+
+## 可观察的预期与参数对照
+
+| 用例 | 唯一变化/操作 | 预期结果 | 怎么观察、如何判定 |
+|---|---|---|---|
+| G05/TrainLoraNode/01 | steps=10 → 20，固定其它参数 | 应产生对应更新步数的LoRA和有限loss序列；训练loss不保证逐步下降。 | 记录实际optimizer step、loss、耗时、显存；加载LoRA比较固定验证集。 |
+| G05/TrainLoraNode/02 | learning_rate小值→2倍小值 | 参数更新尺度通常增加，但可能震荡/过拟合；若出现NaN则FAIL而非更强效果。 | 同初始权重重新开始两次，不能从10步结果继续冒充独立20步实验。 |
+| G05/TrainLoraNode/03 | 训练LoRA以strength=0与1加载 | 0应近似基模；1应可运行，是否学到标识用未见验证图/提示词评价。 | 训练集改善与验证泛化分别记录；保存模型与配置hash。 |
+
+## 实际输入清单
+
+此表来自固定版本索引；不是所有参数组合均已覆盖。动态下拉/动态增长端口必须在本机展开并补录子字段，顶层名字不能代表其所有分支。hidden字段由运行时提供，不作为手填实验变量。
+
+| 输入 | 类型 | 必需性 | 索引中的默认值/范围/提示 |
+|---|---|---|---|
+| model | MODEL | required | 源码提示：The model to train the LoRA on. |
+| latents | LATENT | required | 源码提示：The Latents to use for training, serve as dataset/input of the model. |
+| positive | CONDITIONING | required | 源码提示：The positive conditioning to use for training. |
+| batch_size | INT | required | 默认 1；最小 1；最大 10000；源码提示：The batch size to use for training. |
+| grad_accumulation_steps | INT | required | 默认 1；最小 1；最大 1024；源码提示：The number of gradient accumulation steps to use for training. |
+| steps | INT | required | 默认 16；最小 1；最大 100000；源码提示：The number of steps to train the LoRA for. |
+| learning_rate | FLOAT | required | 默认 0.0005；最小 1e-07；最大 1.0；步长 1e-07；源码提示：The learning rate to use for training. |
+| rank | INT | required | 默认 8；最小 1；最大 128；源码提示：The rank of the LoRA layers. |
+| optimizer | COMBO | required | 默认 'AdamW'；源码提示：The optimizer to use for training. |
+| loss_function | COMBO | required | 默认 'MSE'；源码提示：The loss function to use for training. |
+| seed | INT | required | 默认 0；最小 0；最大 18446744073709551615；源码提示：The seed to use for training (used in generator for LoRA weight initialization and noise sampling) |
+| training_dtype | COMBO | required | 默认 'bf16'；源码提示：The dtype to use for training. 'none' preserves the model's native compute dtype instead of overriding it. For fp16 models, GradScaler is automatically enabled. |
+| lora_dtype | COMBO | required | 默认 'bf16'；源码提示：The dtype to use for lora. |
+| quantized_backward | BOOLEAN | required | 默认 False；源码提示：When using training_dtype 'none' and training on quantized model, doing backward with quantized matmul when enabled. |
+| algorithm | COMBO | required | 默认 'LoRA'；源码提示：The algorithm to use for training. |
+| gradient_checkpointing | BOOLEAN | required | 默认 True；源码提示：Use gradient checkpointing for training. |
+| checkpoint_depth | INT | required | 默认 1；最小 1；最大 5；源码提示：Depth level for gradient checkpointing. |
+| offloading | BOOLEAN | required | 默认 False；源码提示：Offload model weights to CPU during training to save GPU memory. |
+| existing_lora | COMBO | required | 默认 '[None]'；源码提示：The existing LoRA to append to. Set to None for new LoRA. |
+| bucket_mode | BOOLEAN | required | 默认 False；源码提示：Enable resolution bucket mode. When enabled, expects pre-bucketed latents from ResolutionBucket node. |
+| bypass_mode | BOOLEAN | required | 默认 False；源码提示：Enable bypass mode for training. When enabled, adapters are applied via forward hooks instead of weight modification. Useful for quantized models where weights cannot be directly modified. |
+
+## 输出检查点
+
+| 输出端口 | 类型 |
+|---|---|
+| lora | LORA_MODEL |
+| loss_map | LOSS_MAP |
+| steps | INT |
+
+## 验收与记录
+
+逐用例记录 `PASS / FAIL / BLOCKED / INCONCLUSIVE`，附A/B参数、工作流、实际输出和证据。确定性项按数值/形状/位置核对；随机生成项按预先定义的属性计分。没有变化时先排除缓存、未连接消费端、输入缺乏对比特征、错误分支和未加载权重。
+
+若用例需要查看tensor/metadata而目前只有图片预览，该项记 `BLOCKED_OBSERVATION`。不要用“看起来差不多”替代张量级断言；可按[测量指南](../../guides/observable-results.md)在源码断点读取。
+
+复制[结果模板](../../templates/node-experiment-record.md)到 records；初始环境/基准失败时先修复，后续参数对照暂不执行。
+
+## 依据与版本
+
+- 索引模块：`comfy_extras.nodes_train`。接口依据：[固定索引快照](https://github.com/wanghuaiqing2023-blip/comfyui-learning-hub/blob/3e2e4c43e778e41a9bc577edd8ee3d25ad095471/docs/01-%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8/ComfyUI-%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/%E8%8A%82%E7%82%B9%E6%89%8B%E5%86%8C/03-%E5%85%A8%E9%83%A8%E5%86%85%E7%BD%AE%E8%8A%82%E7%82%B9%E7%B4%A2%E5%BC%95.md)。
+- 行为预期含公式推导、接口契约和实验假设；不等于全部逐函数核实。已核对公式及版本差异见[依据清单](../../guides/expectation-sources.md)。

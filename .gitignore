@@ -11,3 +11,4 @@ output/
 *.pt
 *.pth
 .DS_Store
+input/node-labs/

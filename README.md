@@ -11,6 +11,15 @@
 3. [实验操作方法](guides/experiment-method.md)：先预测，再对照，最后换素材复做。
 4. [全部实验目录](labs/README.md)：查找前置实验和实验组。
 5. [节点索引](node-index/README.md)：从内部类名定位实验。
+6. [逐节点实验卡](nodes/README.md)：每个节点的基准输入、可观察预期、参数对照和测量方法。
+
+## 新增：怎样验证参数改变后的结果
+
+639 个节点均有独立实验卡，共1473个用例；原来的78个实验组负责学习顺序。先读[测量与判定规则](guides/observable-results.md)，再从节点卡执行单变量对照；使用[单节点记录模板](templates/node-experiment-record.md)保存预测和实测。
+
+可以先看三个示例：[亮度的逐像素公式](nodes/A06/AdjustBrightness.md)、[遮罩阈值与等号边界](nodes/A07/ThresholdMask.md)、[人体动画FPS、位移、轨迹与格式](nodes/F10/BuildPoseFile.md)。基础素材可由 `tools/make_fixtures.py` 生成，图片/PCM音频可用 `tools/measure.py` 测量。
+
+**边界**：全部卡片都是未运行的实验设计；模型家族共性用例不等于逐函数审计，动态子参数与明确标注的探索分支仍需本机核对。[依据与版本差异](guides/expectation-sources.md)列出已核对公式，避免把假设写成实测结果。
 
 ## 分类目录
 
