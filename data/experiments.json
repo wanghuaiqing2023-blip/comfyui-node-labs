@@ -1,0 +1,1486 @@
+[
+  {
+    "id": "A01",
+    "title": "建立观察与保存出口",
+    "prerequisites": [],
+    "nodes": [
+      "ImageCompare",
+      "GetImageSize",
+      "LoadImage",
+      "LoadImageOutput",
+      "PreviewImage",
+      "SaveImage",
+      "PreviewAny"
+    ],
+    "path": "labs/01-basics/A01.md"
+  },
+  {
+    "id": "A02",
+    "title": "把参数变成数据",
+    "prerequisites": [
+      "A01"
+    ],
+    "nodes": [
+      "ColorToRGBInt",
+      "ComfyNumberConvert",
+      "CreateList",
+      "CurveEditor",
+      "CustomCombo",
+      "ComfyMathExpression",
+      "ResolutionSelector",
+      "SeedNode",
+      "PrimitiveBoolean",
+      "PrimitiveFloat",
+      "PrimitiveInt",
+      "PrimitiveString",
+      "PrimitiveStringMultiline"
+    ],
+    "path": "labs/01-basics/A02.md"
+  },
+  {
+    "id": "A03",
+    "title": "确定性文本处理",
+    "prerequisites": [
+      "A02"
+    ],
+    "nodes": [
+      "AddTextPrefix",
+      "AddTextSuffix",
+      "BuildJsonPromptIdeogram",
+      "StringCompare",
+      "StringConcatenate",
+      "StringContains",
+      "ConvertArrayToString",
+      "ConvertDictionaryToString",
+      "CaseConverter",
+      "TextToLowercase",
+      "TextToUppercase",
+      "TextOverlay",
+      "RegexExtract",
+      "JsonExtractString",
+      "StringFormat",
+      "RegexMatch",
+      "MergeTextLists",
+      "StringReplace",
+      "ReplaceText",
+      "RegexReplace",
+      "SaveText",
+      "StripWhitespace",
+      "StringSubstring",
+      "StringLength",
+      "StringTrim",
+      "TruncateText"
+    ],
+    "path": "labs/01-basics/A03.md"
+  },
+  {
+    "id": "A04",
+    "title": "逻辑分支与执行路径",
+    "prerequisites": [
+      "A02"
+    ],
+    "nodes": [
+      "ComfyAndNode",
+      "ComfySwitchNode",
+      "ComfyNotNode",
+      "ComfyOrNode"
+    ],
+    "path": "labs/01-basics/A04.md"
+  },
+  {
+    "id": "A05",
+    "title": "图像空间变换",
+    "prerequisites": [
+      "A01",
+      "A02"
+    ],
+    "nodes": [
+      "ImageCropV2",
+      "CenterCropImages",
+      "ImageCrop",
+      "RandomCropImages",
+      "ImageCropToMask",
+      "ImageFlip",
+      "ImagePadForOutpaint",
+      "ResizeAndPadImage",
+      "ResizeImageMaskNode",
+      "ResizeImagesByLongerEdge",
+      "ResizeImagesByShorterEdge",
+      "ImageRotate",
+      "ImageStitch",
+      "ImageScaleToMaxDimension",
+      "ImageScaleToTotalPixels",
+      "ImageScale",
+      "ImageScaleBy"
+    ],
+    "path": "labs/01-basics/A05.md"
+  },
+  {
+    "id": "A06",
+    "title": "图像颜色与滤波",
+    "prerequisites": [
+      "A01"
+    ],
+    "nodes": [
+      "AdjustBrightness",
+      "AdjustContrast",
+      "ImageRGBToYUV",
+      "ImageYUVToRGB",
+      "ImageInvert",
+      "NormalizeImages",
+      "ImageAddNoise",
+      "Morphology",
+      "ImageBlend",
+      "ImageBlur",
+      "Canny",
+      "ImageQuantize",
+      "ImageSharpen",
+      "ColorTransfer",
+      "ImageHistogram"
+    ],
+    "path": "labs/01-basics/A06.md"
+  },
+  {
+    "id": "A07",
+    "title": "遮罩数值与空间范围",
+    "prerequisites": [
+      "A01",
+      "A05"
+    ],
+    "nodes": [
+      "LoadImageMask",
+      "BatchMasksNode",
+      "MaskComposite",
+      "ImageColorToMask",
+      "ImageToMask",
+      "MaskToImage",
+      "SolidMask",
+      "CropMask",
+      "FeatherMask",
+      "GrowMask",
+      "InvertMask",
+      "MaskPreview",
+      "ThresholdMask"
+    ],
+    "path": "labs/01-basics/A07.md"
+  },
+  {
+    "id": "A08",
+    "title": "遮罩合成与透明通道",
+    "prerequisites": [
+      "A07"
+    ],
+    "nodes": [
+      "ImageCompositeMasked",
+      "JoinImageWithAlpha",
+      "PorterDuffImageComposite",
+      "SplitImageWithAlpha"
+    ],
+    "path": "labs/01-basics/A08.md"
+  },
+  {
+    "id": "A09",
+    "title": "批次 列表与分块",
+    "prerequisites": [
+      "A05"
+    ],
+    "nodes": [
+      "BatchImagesNode",
+      "ImageBatch",
+      "ImageDeduplication",
+      "ImageFromBatch",
+      "ImageGrid",
+      "MergeImageLists",
+      "ImageMergeTileList",
+      "RebatchImages",
+      "RepeatImageBatch",
+      "SplitImageToTileList"
+    ],
+    "path": "labs/01-basics/A09.md"
+  },
+  {
+    "id": "A10",
+    "title": "边界框与图层",
+    "prerequisites": [
+      "A05",
+      "A08"
+    ],
+    "nodes": [
+      "AddLayer",
+      "ImageCompositor",
+      "LayersFromBoundingBoxes",
+      "DrawBBoxes",
+      "CropByBBoxes",
+      "CreateBoundingBoxes",
+      "PrimitiveBoundingBox"
+    ],
+    "path": "labs/01-basics/A10.md"
+  },
+  {
+    "id": "A11",
+    "title": "图像来源与导出格式",
+    "prerequisites": [
+      "A01",
+      "A09"
+    ],
+    "nodes": [
+      "EmptyImage",
+      "Painter",
+      "SaveAnimatedPNG",
+      "SaveAnimatedWEBP",
+      "SaveImageAdvanced",
+      "SaveSVGNode",
+      "WebcamCapture"
+    ],
+    "path": "labs/01-basics/A11.md"
+  },
+  {
+    "id": "A12",
+    "title": "图文数据集配对",
+    "prerequisites": [
+      "A03",
+      "A09"
+    ],
+    "nodes": [
+      "LoadImageDataSetFromFolder",
+      "LoadImageTextDataSetFromFolder",
+      "SaveImageDataSetToFolder",
+      "SaveImageTextDataSetToFolder",
+      "ShuffleDataset",
+      "ShuffleImageTextDataset"
+    ],
+    "path": "labs/01-basics/A12.md"
+  },
+  {
+    "id": "A13",
+    "title": "图像着色器",
+    "prerequisites": [
+      "A06"
+    ],
+    "nodes": [
+      "GLSLShader"
+    ],
+    "path": "labs/01-basics/A13.md"
+  },
+  {
+    "id": "B01",
+    "title": "加载器与最小条件编码",
+    "prerequisites": [
+      "A03"
+    ],
+    "nodes": [
+      "CLIPSetLastLayer",
+      "CLIPTextEncode",
+      "T5TokenizerOptions",
+      "CheckpointLoaderSimple",
+      "ImageOnlyCheckpointLoader",
+      "CheckpointLoader",
+      "CLIPLoader",
+      "DualCLIPLoader",
+      "QuadrupleCLIPLoader",
+      "TripleCLIPLoader",
+      "DiffusersLoader",
+      "UNETLoader",
+      "VAELoader"
+    ],
+    "path": "labs/02-generation/B01.md"
+  },
+  {
+    "id": "B02",
+    "title": "像素与潜空间往返",
+    "prerequisites": [
+      "B01",
+      "A06"
+    ],
+    "nodes": [
+      "VAEDecode",
+      "VAEDecodeTiled",
+      "VAEEncode",
+      "VAEEncodeTiled"
+    ],
+    "path": "labs/02-generation/B02.md"
+  },
+  {
+    "id": "B03",
+    "title": "最小文生图与复现",
+    "prerequisites": [
+      "B01",
+      "B02"
+    ],
+    "nodes": [
+      "EmptyLatentImage",
+      "KSampler"
+    ],
+    "path": "labs/02-generation/B03.md"
+  },
+  {
+    "id": "B04",
+    "title": "图生图与去噪强度",
+    "prerequisites": [
+      "B03"
+    ],
+    "nodes": [
+      "KSamplerAdvanced"
+    ],
+    "path": "labs/02-generation/B04.md"
+  },
+  {
+    "id": "B05",
+    "title": "局部重绘与外扩",
+    "prerequisites": [
+      "B04",
+      "A07",
+      "A08"
+    ],
+    "nodes": [
+      "InpaintModelConditioning",
+      "SetLatentNoiseMask",
+      "VAEEncodeForInpaint"
+    ],
+    "path": "labs/02-generation/B05.md"
+  },
+  {
+    "id": "B06",
+    "title": "潜空间操作与保存",
+    "prerequisites": [
+      "B02",
+      "B04",
+      "A09"
+    ],
+    "nodes": [
+      "LatentBlend",
+      "LatentComposite",
+      "LatentCompositeMasked",
+      "LoadLatent",
+      "SaveLatent",
+      "LatentUpscale",
+      "LatentUpscaleBy",
+      "LatentAdd",
+      "LatentBatchSeedBehavior",
+      "LatentConcat",
+      "LatentCut",
+      "LatentCutToBatch",
+      "LatentInterpolate",
+      "LatentMultiply",
+      "LatentSubtract",
+      "LatentApplyOperation",
+      "LatentApplyOperationCFG",
+      "LatentOperationSharpen",
+      "LatentOperationTonemapReinhard",
+      "BatchLatentsNode",
+      "LatentBatch",
+      "LatentFromBatch",
+      "RebatchLatents",
+      "RepeatLatentBatch",
+      "LatentCrop",
+      "LatentFlip",
+      "LatentRotate"
+    ],
+    "path": "labs/02-generation/B06.md"
+  },
+  {
+    "id": "B07",
+    "title": "拆开采样器",
+    "prerequisites": [
+      "B03"
+    ],
+    "nodes": [
+      "SamplerCustom",
+      "SamplerCustomAdvanced",
+      "BasicGuider",
+      "CFGGuider",
+      "AddNoise",
+      "DisableNoise",
+      "RandomNoise",
+      "KSamplerSelect",
+      "BasicScheduler"
+    ],
+    "path": "labs/02-generation/B07.md"
+  },
+  {
+    "id": "B08",
+    "title": "噪声时间表与分段采样",
+    "prerequisites": [
+      "B07"
+    ],
+    "nodes": [
+      "AlignYourStepsScheduler",
+      "BetaSamplingScheduler",
+      "ExponentialScheduler",
+      "GITSScheduler",
+      "KarrasScheduler",
+      "LaplaceScheduler",
+      "OptimalStepsScheduler",
+      "PolyexponentialScheduler",
+      "SDTurboScheduler",
+      "VPScheduler",
+      "ExtendIntermediateSigmas",
+      "FlipSigmas",
+      "ManualSigmas",
+      "SamplingPercentToSigma",
+      "SetFirstSigma",
+      "SplitSigmas",
+      "SplitSigmasDenoise"
+    ],
+    "path": "labs/02-generation/B08.md"
+  },
+  {
+    "id": "B09",
+    "title": "采样算法的替换",
+    "prerequisites": [
+      "B07"
+    ],
+    "nodes": [
+      "SamplerEulerCFGpp",
+      "SamplerDPMAdaptative",
+      "SamplerDPMPP_2M_SDE",
+      "SamplerDPMPP_2S_Ancestral",
+      "SamplerDPMPP_3M_SDE",
+      "SamplerDPMPP_SDE",
+      "SamplerER_SDE",
+      "SamplerEulerAncestral",
+      "SamplerEulerAncestralCFGPP",
+      "SamplerLCM",
+      "SamplerLCMUpscale",
+      "SamplerLMS",
+      "SamplerSASolver",
+      "SamplerSEEDS2"
+    ],
+    "path": "labs/02-generation/B09.md"
+  },
+  {
+    "id": "B10",
+    "title": "引导器与引导补丁",
+    "prerequisites": [
+      "B07"
+    ],
+    "nodes": [
+      "CFGNorm",
+      "CFGZeroStar",
+      "LTXVModalityGuidance",
+      "LTXVSpatioTemporalGuidance",
+      "NAGuidance",
+      "SkipLayerGuidanceDiT",
+      "SkipLayerGuidanceDiTSimple",
+      "SkipLayerGuidanceSD3",
+      "TCFG",
+      "FreSca",
+      "PerpNeg",
+      "PerpNegGuider",
+      "Mahiro",
+      "SelfAttentionGuidance",
+      "APG",
+      "CFGOverride",
+      "DualCFGGuider",
+      "DualModelGuider",
+      "LTXVDualCFGGuider",
+      "VideoLinearCFGGuidance",
+      "VideoTriangleCFGGuidance"
+    ],
+    "path": "labs/02-generation/B10.md"
+  },
+  {
+    "id": "B11",
+    "title": "条件组合 区域与时段",
+    "prerequisites": [
+      "B03",
+      "A07"
+    ],
+    "nodes": [
+      "ConditioningTimestepsRange",
+      "ConditioningAverage",
+      "ConditioningCombine",
+      "ConditioningConcat",
+      "ConditioningMultiply",
+      "ConditioningSetAreaStrength",
+      "ConditioningSetAreaPercentageVideo",
+      "ConditioningSetAreaPercentage",
+      "ConditioningSetArea",
+      "ConditioningSetMask",
+      "ConditioningZeroOut",
+      "ConditioningSetTimestepRange"
+    ],
+    "path": "labs/02-generation/B11.md"
+  },
+  {
+    "id": "B12",
+    "title": "LoRA 与旁路",
+    "prerequisites": [
+      "B03"
+    ],
+    "nodes": [
+      "LoraLoaderModelOnly",
+      "LoraLoaderBypass",
+      "LoraLoaderBypassModelOnly",
+      "LoraLoader",
+      "LoraModelLoader"
+    ],
+    "path": "labs/02-generation/B12.md"
+  },
+  {
+    "id": "B13",
+    "title": "ControlNet 与结构条件",
+    "prerequisites": [
+      "B03",
+      "A06"
+    ],
+    "nodes": [
+      "CLIPTextEncodeControlnet",
+      "ControlNetApplyAdvanced",
+      "ControlNetApply",
+      "ControlNetInpaintingAliMamaApply",
+      "ControlNetApplySD3",
+      "SetUnionControlNetType",
+      "ControlNetLoader",
+      "DiffControlNetLoader"
+    ],
+    "path": "labs/02-generation/B13.md"
+  },
+  {
+    "id": "B14",
+    "title": "图像编码与风格身份条件",
+    "prerequisites": [
+      "B03",
+      "A01"
+    ],
+    "nodes": [
+      "StyleModelApply",
+      "CLIPVisionEncode",
+      "ReferenceLatent",
+      "unCLIPConditioning",
+      "GLIGENTextBoxApply",
+      "PhotoMakerEncode",
+      "CLIPVisionLoader",
+      "GLIGENLoader",
+      "PhotoMakerLoader",
+      "StyleModelLoader",
+      "unCLIPCheckpointLoader"
+    ],
+    "path": "labs/02-generation/B14.md"
+  },
+  {
+    "id": "C01",
+    "title": "视频拆分与封装",
+    "prerequisites": [
+      "A09"
+    ],
+    "nodes": [
+      "CreateVideo",
+      "GetVideoComponents",
+      "LoadVideo",
+      "SaveVideo",
+      "SaveWEBM"
+    ],
+    "path": "labs/03-audio-video/C01.md"
+  },
+  {
+    "id": "C02",
+    "title": "视频时间裁剪与潜空间帧",
+    "prerequisites": [
+      "C01",
+      "B06"
+    ],
+    "nodes": [
+      "TrimVideoLatent",
+      "ReplaceVideoLatentFrames",
+      "VideoFrameSample",
+      "Video Slice",
+      "VideoRandomTemporalCrop",
+      "VideoTemporalCrop"
+    ],
+    "path": "labs/03-audio-video/C02.md"
+  },
+  {
+    "id": "C03",
+    "title": "音频通道 时间与封装",
+    "prerequisites": [
+      "C01"
+    ],
+    "nodes": [
+      "AudioAdjustVolume",
+      "AudioEqualizer3Band",
+      "AudioConcat",
+      "EmptyAudio",
+      "JoinAudioChannels",
+      "LoadAudio",
+      "AudioMerge",
+      "PreviewAudio",
+      "RecordAudio",
+      "SaveAudioAdvanced",
+      "SaveAudio",
+      "SaveAudioMP3",
+      "SaveAudioOpus",
+      "SplitAudioChannels",
+      "TrimAudioDuration"
+    ],
+    "path": "labs/03-audio-video/C03.md"
+  },
+  {
+    "id": "C04",
+    "title": "学习型放大与插帧",
+    "prerequisites": [
+      "A05",
+      "C01"
+    ],
+    "nodes": [
+      "ImageUpscaleWithModel",
+      "FrameInterpolationModelLoader",
+      "LatentUpscaleModelLoader",
+      "UpscaleModelLoader",
+      "FrameInterpolate"
+    ],
+    "path": "labs/03-audio-video/C04.md"
+  },
+  {
+    "id": "C05",
+    "title": "视频与图文数据集",
+    "prerequisites": [
+      "C02",
+      "A12"
+    ],
+    "nodes": [
+      "ShuffleVideoTextDataset",
+      "LoadVideoDataSetFromFolder",
+      "LoadVideoTextDataSetFromFolder",
+      "ShuffleVideoDataset"
+    ],
+    "path": "labs/03-audio-video/C05.md"
+  },
+  {
+    "id": "D01",
+    "title": "H3 参考视频最小闭环",
+    "prerequisites": [
+      "B01",
+      "B07",
+      "C01",
+      "C03"
+    ],
+    "nodes": [
+      "MiniMaxH3ReferenceToVideo",
+      "VAEDecodeAudio",
+      "VAEDecodeAudioTiled"
+    ],
+    "path": "labs/04-minimax-h3/D01.md"
+  },
+  {
+    "id": "D02",
+    "title": "H3 首末帧与时长网格",
+    "prerequisites": [
+      "D01"
+    ],
+    "nodes": [
+      "MiniMaxH3ImageToVideo",
+      "EmptyMiniMaxH3LatentAV"
+    ],
+    "path": "labs/04-minimax-h3/D02.md"
+  },
+  {
+    "id": "D03",
+    "title": "H3 时间锚点与多参考",
+    "prerequisites": [
+      "D02"
+    ],
+    "nodes": [
+      "MiniMaxH3AddGuide"
+    ],
+    "path": "labs/04-minimax-h3/D03.md"
+  },
+  {
+    "id": "D04",
+    "title": "H3 视频与音频采样偏移",
+    "prerequisites": [
+      "D01",
+      "B08"
+    ],
+    "nodes": [
+      "MiniMaxH3SigmaShift"
+    ],
+    "path": "labs/04-minimax-h3/D04.md"
+  },
+  {
+    "id": "F01",
+    "title": "三维文件 相机与预览",
+    "prerequisites": [
+      "A01",
+      "C01"
+    ],
+    "nodes": [
+      "CreateCameraInfo",
+      "Load3D",
+      "Load3DAdvanced",
+      "Preview3D",
+      "Preview3DAdvanced",
+      "PreviewPointCloud",
+      "Save3DAdvanced",
+      "SaveGLB",
+      "SavePointCloud"
+    ],
+    "path": "labs/06-vision-3d/F01.md"
+  },
+  {
+    "id": "F02",
+    "title": "图像几何估计与网格",
+    "prerequisites": [
+      "A05",
+      "F01"
+    ],
+    "nodes": [
+      "DA3GeometryToMesh",
+      "MoGePointMapToMesh",
+      "MoGeGeometryToFOV",
+      "DA3Render",
+      "MoGeRender",
+      "DA3Inference",
+      "MoGeInference",
+      "MoGePanoramaInference",
+      "LoadDA3Model",
+      "LoadMoGeModel"
+    ],
+    "path": "labs/06-vision-3d/F02.md"
+  },
+  {
+    "id": "F03",
+    "title": "网格后处理与文件转换",
+    "prerequisites": [
+      "F02",
+      "F01"
+    ],
+    "nodes": [
+      "MeshToFile3D",
+      "DecimateMesh",
+      "FillHoles",
+      "GetMeshInfo",
+      "MergeMeshes",
+      "PaintMesh",
+      "RemeshMesh",
+      "RenderMesh",
+      "RotateMesh",
+      "MeshSmoothNormals",
+      "WeldVertices"
+    ],
+    "path": "labs/06-vision-3d/F03.md"
+  },
+  {
+    "id": "F04",
+    "title": "UV 贴图与烘焙",
+    "prerequisites": [
+      "F03"
+    ],
+    "nodes": [
+      "ApplyTextureToMesh",
+      "BakeAmbientOcclusion",
+      "BakeNormalMapFromMesh",
+      "BakeTextureFromVoxel",
+      "MeshTextureToImage",
+      "RenderUVAtlas",
+      "UnwrapMesh"
+    ],
+    "path": "labs/06-vision-3d/F04.md"
+  },
+  {
+    "id": "F05",
+    "title": "Splat 数据 文件与渲染",
+    "prerequisites": [
+      "F01"
+    ],
+    "nodes": [
+      "PreviewGaussianSplat",
+      "SaveGaussianSplat",
+      "SplatToFile3D",
+      "SplatToMesh",
+      "File3DToSplat",
+      "GetSplatCount",
+      "MergeSplat",
+      "RenderSplat",
+      "TransformSplat"
+    ],
+    "path": "labs/06-vision-3d/F05.md"
+  },
+  {
+    "id": "F06",
+    "title": "目标检测与自动遮罩",
+    "prerequisites": [
+      "A07",
+      "A10"
+    ],
+    "nodes": [
+      "RemoveBackground",
+      "RTDETR_detect",
+      "SAM3_Detect",
+      "LoadBackgroundRemovalModel"
+    ],
+    "path": "labs/06-vision-3d/F06.md"
+  },
+  {
+    "id": "F07",
+    "title": "视频目标跟踪",
+    "prerequisites": [
+      "F06",
+      "C02"
+    ],
+    "nodes": [
+      "SAM3_VideoTrack",
+      "SAM3_TrackPreview",
+      "SAM3_TrackToMask"
+    ],
+    "path": "labs/06-vision-3d/F07.md"
+  },
+  {
+    "id": "F08",
+    "title": "SAM3D 人体姿态预测",
+    "prerequisites": [
+      "C02",
+      "F06",
+      "F01"
+    ],
+    "nodes": [
+      "SAM3DBody_Loader",
+      "SAM3DBody_Render",
+      "SAM3DBody_Predict"
+    ],
+    "path": "labs/06-vision-3d/F08.md"
+  },
+  {
+    "id": "F09",
+    "title": "姿态时序平滑",
+    "prerequisites": [
+      "F08"
+    ],
+    "nodes": [
+      "SAM3DBody_Smooth"
+    ],
+    "path": "labs/06-vision-3d/F09.md"
+  },
+  {
+    "id": "F10",
+    "title": "人体动画导出",
+    "prerequisites": [
+      "F09",
+      "F01"
+    ],
+    "nodes": [
+      "BuildPoseFile"
+    ],
+    "path": "labs/06-vision-3d/F10.md"
+  },
+  {
+    "id": "F11",
+    "title": "人脸关键点与人体表情",
+    "prerequisites": [
+      "F08"
+    ],
+    "nodes": [
+      "MediaPipeFaceLandmarker",
+      "MediaPipeFaceMask",
+      "SAM3DBody_FaceExpression",
+      "MediaPipeFaceMeshVisualize",
+      "LoadMediaPipeFaceLandmarker"
+    ],
+    "path": "labs/06-vision-3d/F11.md"
+  },
+  {
+    "id": "F12",
+    "title": "二维姿态与关键点表示",
+    "prerequisites": [
+      "F06"
+    ],
+    "nodes": [
+      "SDPoseDrawKeypoints",
+      "SDPoseFaceBBoxes",
+      "SDPoseKeypointExtractor"
+    ],
+    "path": "labs/06-vision-3d/F12.md"
+  },
+  {
+    "id": "G01",
+    "title": "模型补丁与注意力实验",
+    "prerequisites": [
+      "B07",
+      "B10"
+    ],
+    "nodes": [
+      "CLIPAttentionMultiply",
+      "UNetCrossAttentionMultiply",
+      "UNetSelfAttentionMultiply",
+      "UNetTemporalAttentionMultiply",
+      "ContextWindowsManual",
+      "LTXVContextWindows",
+      "ModelAttentionBackend",
+      "ModelNoiseScale",
+      "ModelSamplingAuraFlow",
+      "ModelSamplingContinuousEDM",
+      "ModelSamplingContinuousV",
+      "ModelSamplingDiscrete",
+      "RenormCFG",
+      "RescaleCFG",
+      "ScaleROPE",
+      "WanContextWindowsManual",
+      "ChromaRadianceOptions",
+      "ModelSamplingFlux",
+      "HiDreamO1PatchSeamSmoothing",
+      "ModelSamplingLTXV",
+      "ModelSamplingStableCascade",
+      "ModelSamplingSD3",
+      "Epsilon Scaling",
+      "FreeU",
+      "FreeU_V2",
+      "HyperTile",
+      "PatchModelAddDownscale",
+      "PerturbedAttentionGuidance",
+      "TomePatchModel",
+      "TemporalScoreRescaling"
+    ],
+    "path": "labs/07-advanced/G01.md"
+  },
+  {
+    "id": "G02",
+    "title": "Hook 的时间控制与组合",
+    "prerequisites": [
+      "B11",
+      "B12"
+    ],
+    "nodes": [
+      "SetClipHooks",
+      "CombineHooks2",
+      "CombineHooks4",
+      "CombineHooks8",
+      "PairConditioningCombine",
+      "PairConditioningSetDefaultCombine",
+      "PairConditioningSetProperties",
+      "PairConditioningSetPropertiesAndCombine",
+      "ConditioningSetDefaultCombine",
+      "ConditioningSetProperties",
+      "ConditioningSetPropertiesAndCombine",
+      "CreateHookLora",
+      "CreateHookLoraModelOnly",
+      "CreateHookModelAsLora",
+      "CreateHookModelAsLoraModelOnly",
+      "CreateHookKeyframe",
+      "CreateHookKeyframesFromFloats",
+      "CreateHookKeyframesInterpolated",
+      "SetHookKeyframes"
+    ],
+    "path": "labs/07-advanced/G02.md"
+  },
+  {
+    "id": "G03",
+    "title": "模型合并与保存回读",
+    "prerequisites": [
+      "B12"
+    ],
+    "nodes": [
+      "LoraSave",
+      "CLIPMergeAdd",
+      "CLIPMergeSimple",
+      "CLIPMergeSubtract",
+      "CLIPSave",
+      "ImageOnlyCheckpointSave",
+      "ModelMergeAdd",
+      "ModelMergeBlocks",
+      "ModelMergeSimple",
+      "ModelMergeSubtract",
+      "ModelSave",
+      "CheckpointSave",
+      "SaveLoRA",
+      "VAESave",
+      "ModelMergeAuraflow",
+      "ModelMergeCosmos14B",
+      "ModelMergeCosmos7B",
+      "ModelMergeCosmosPredict2_14B",
+      "ModelMergeCosmosPredict2_2B",
+      "ModelMergeFlux1",
+      "ModelMergeKrea2",
+      "ModelMergeLTXV",
+      "ModelMergeMochiPreview",
+      "ModelMergeQwenImage",
+      "ModelMergeSD1",
+      "ModelMergeSD2",
+      "ModelMergeSD35_Large",
+      "ModelMergeSD3_2B",
+      "ModelMergeSDXL",
+      "ModelMergeWAN2_1"
+    ],
+    "path": "labs/07-advanced/G03.md"
+  },
+  {
+    "id": "G04",
+    "title": "性能 缓存与设备",
+    "prerequisites": [
+      "B07"
+    ],
+    "nodes": [
+      "EasyCache",
+      "LazyCache",
+      "ModelComputeDtype",
+      "MultiGPU_WorkUnits",
+      "SelectCLIPDevice",
+      "SelectModelDevice",
+      "SelectVAEDevice",
+      "FluxKVCache",
+      "TorchCompileModel"
+    ],
+    "path": "labs/07-advanced/G04.md"
+  },
+  {
+    "id": "G05",
+    "title": "训练数据与最小 LoRA 训练",
+    "prerequisites": [
+      "A12",
+      "B12"
+    ],
+    "nodes": [
+      "LoadTrainingDataset",
+      "MakeTrainingDataset",
+      "LossGraphNode",
+      "ResolutionBucket",
+      "SaveTrainingDataset",
+      "TrainLoraNode"
+    ],
+    "path": "labs/07-advanced/G05.md"
+  },
+  {
+    "id": "G06",
+    "title": "弃用占位节点兼容性",
+    "prerequisites": [
+      "B03"
+    ],
+    "nodes": [
+      "wanBlockSwap"
+    ],
+    "path": "labs/07-advanced/G06.md"
+  },
+  {
+    "id": "E01",
+    "title": "SDXL SD3 与 Refiner 条件",
+    "prerequisites": [
+      "B03",
+      "B07"
+    ],
+    "nodes": [
+      "CLIPTextEncodeSD3",
+      "CLIPTextEncodeSDXLRefiner",
+      "CLIPTextEncodeSDXL",
+      "EmptySD3LatentImage"
+    ],
+    "path": "labs/05-model-families/E01.md"
+  },
+  {
+    "id": "E02",
+    "title": "Flux 与多参考",
+    "prerequisites": [
+      "B03",
+      "B07"
+    ],
+    "nodes": [
+      "CLIPTextEncodeFlux",
+      "FluxKontextMultiReferenceLatentMethod",
+      "FluxDisableGuidance",
+      "FluxGuidance",
+      "FluxKontextImageScale",
+      "EmptyFlux2LatentImage",
+      "USOStyleReference",
+      "Flux2Scheduler"
+    ],
+    "path": "labs/05-model-families/E02.md"
+  },
+  {
+    "id": "E03",
+    "title": "Qwen 图像编辑与分层",
+    "prerequisites": [
+      "B04",
+      "B07",
+      "A08"
+    ],
+    "nodes": [
+      "TextEncodeQwenImageEdit",
+      "TextEncodeQwenImageEditPlus",
+      "EmptyQwenImageLayeredLatentImage",
+      "QwenImageDiffsynthControlnet"
+    ],
+    "path": "labs/05-model-families/E03.md"
+  },
+  {
+    "id": "E04",
+    "title": "HiDream 图像与参考条件",
+    "prerequisites": [
+      "B03",
+      "B07"
+    ],
+    "nodes": [
+      "CLIPTextEncodeHiDream",
+      "HiDreamO1ReferenceImages",
+      "EmptyHiDreamO1LatentImage"
+    ],
+    "path": "labs/05-model-families/E04.md"
+  },
+  {
+    "id": "E05",
+    "title": "其他图像家族的编码与编辑",
+    "prerequisites": [
+      "B04",
+      "B07"
+    ],
+    "nodes": [
+      "TextEncodeBooguEdit",
+      "CLIPTextEncodeHunyuanDiT",
+      "TextEncodeJoyImageEdit",
+      "CLIPTextEncodeLumina2",
+      "TextEncodeMageFlowEdit",
+      "CLIPTextEncodePixArtAlpha",
+      "TextEncodeZImageOmni",
+      "EmptyChromaRadianceLatentImage",
+      "EmptyHunyuanImageLatent",
+      "ZImageFunControlnet"
+    ],
+    "path": "labs/05-model-families/E05.md"
+  },
+  {
+    "id": "E06",
+    "title": "多阶段生成与专项图像处理",
+    "prerequisites": [
+      "B04",
+      "B05",
+      "B07"
+    ],
+    "nodes": [
+      "DifferentialDiffusion",
+      "StableCascade_SuperResolutionControlnet",
+      "PiDConditioning",
+      "InstructPixToPixConditioning",
+      "LotusConditioning",
+      "StableCascade_StageB_Conditioning",
+      "SD_4XUpscale_Conditioning",
+      "StableCascade_EmptyLatentImage",
+      "StableCascade_StageC_VAEEncode"
+    ],
+    "path": "labs/05-model-families/E06.md"
+  },
+  {
+    "id": "E07",
+    "title": "LTX 视频与音频联合潜空间",
+    "prerequisites": [
+      "B07",
+      "C01",
+      "C03"
+    ],
+    "nodes": [
+      "LTXVDurationPredictor",
+      "GetICLoRAParameters",
+      "LTXVReferenceAudio",
+      "LTXVAddGuide",
+      "LTXVConditioning",
+      "LTXVCropGuides",
+      "LTXVImgToVideo",
+      "LTXVImgToVideoInplace",
+      "LTXVConcatAVLatent",
+      "EmptyLTXVLatentVideo",
+      "LTXVAudioVAEDecode",
+      "LTXVAudioVAEEncode",
+      "LTXVEmptyLatentAudio",
+      "LTXVLatentUpsampler",
+      "LTXVSeparateAVLatent",
+      "LTXAVTextEncoderLoader",
+      "LTXVAudioVAELoader",
+      "LTXVScheduler",
+      "LTXVPreprocess"
+    ],
+    "path": "labs/05-model-families/E07.md"
+  },
+  {
+    "id": "E08",
+    "title": "Hunyuan 视频与超分阶段",
+    "prerequisites": [
+      "B07",
+      "C01",
+      "C03"
+    ],
+    "nodes": [
+      "HunyuanRefinerLatent",
+      "HunyuanVideo15SuperResolution",
+      "HunyuanImageToVideo",
+      "HunyuanVideo15ImageToVideo",
+      "TextEncodeHunyuanVideo_ImageToVideo",
+      "HunyuanVideo15LatentUpscaleWithModel",
+      "EmptyHunyuanLatentVideo",
+      "EmptyHunyuanVideo15Latent"
+    ],
+    "path": "labs/05-model-families/E08.md"
+  },
+  {
+    "id": "E09",
+    "title": "Cosmos Kandinsky Mochi 与 SVD 视频",
+    "prerequisites": [
+      "B07",
+      "C01",
+      "C03"
+    ],
+    "nodes": [
+      "NormalizeVideoLatentStart",
+      "CosmosImageToVideoLatent",
+      "CosmosPredict2ImageToVideoLatent",
+      "CLIPTextEncodeKandinsky5",
+      "Kandinsky5ImageToVideo",
+      "SVD_img2vid_Conditioning",
+      "EmptyCosmosLatentVideo",
+      "EmptyMochiLatentVideo"
+    ],
+    "path": "labs/05-model-families/E09.md"
+  },
+  {
+    "id": "E10",
+    "title": "自回归视频采样",
+    "prerequisites": [
+      "B07",
+      "C01",
+      "C03"
+    ],
+    "nodes": [
+      "ARVideoI2V",
+      "EmptyARVideoLatent",
+      "SamplerARVideo"
+    ],
+    "path": "labs/05-model-families/E10.md"
+  },
+  {
+    "id": "E11",
+    "title": "Wan 基础与首末帧",
+    "prerequisites": [
+      "B07",
+      "C01",
+      "C03"
+    ],
+    "nodes": [
+      "Wan22ImageToVideoLatent",
+      "WanFirstLastFrameToVideo",
+      "WanImageToVideo"
+    ],
+    "path": "labs/05-model-families/E11.md"
+  },
+  {
+    "id": "E12",
+    "title": "Wan 轨迹与相机控制",
+    "prerequisites": [
+      "E11",
+      "A10"
+    ],
+    "nodes": [
+      "WanCameraEmbedding",
+      "WanCameraImageToVideo",
+      "GenerateTracks",
+      "WanMoveConcatTrack",
+      "WanMoveTracksFromCoords",
+      "WanMoveTrackToVideo",
+      "WanMoveVisualizeTracks",
+      "WanTrackToVideo"
+    ],
+    "path": "labs/05-model-families/E12.md"
+  },
+  {
+    "id": "E13",
+    "title": "Wan 遮罩 控制与主体参考",
+    "prerequisites": [
+      "E11",
+      "B05",
+      "F06"
+    ],
+    "nodes": [
+      "Wan22FunControlToVideo",
+      "WanFunControlToVideo",
+      "WanFunInpaintToVideo",
+      "WanPhantomSubjectToVideo",
+      "WanVaceToVideo",
+      "WanUni3CControlnetApply"
+    ],
+    "path": "labs/05-model-families/E13.md"
+  },
+  {
+    "id": "E14",
+    "title": "Wan 人体动作与 SCAIL",
+    "prerequisites": [
+      "E11",
+      "F08",
+      "F09"
+    ],
+    "nodes": [
+      "WanAnimate2Cache",
+      "WanAnimate2ToVideo",
+      "WanAnimateToVideo",
+      "SCAIL2ColoredMask",
+      "WanSCAILToVideo"
+    ],
+    "path": "labs/05-model-families/E14.md"
+  },
+  {
+    "id": "E15",
+    "title": "Wan 音频驱动与续接",
+    "prerequisites": [
+      "E11",
+      "C03"
+    ],
+    "nodes": [
+      "WanDancerPadKeyframes",
+      "WanDancerPadKeyframesList",
+      "AudioEncoderEncode",
+      "WanDancerEncodeAudio",
+      "WanDancerVideo",
+      "WanHuMoImageToVideo",
+      "WanInfiniteTalkToVideo",
+      "WanSoundImageToVideo",
+      "WanSoundImageToVideoExtend",
+      "AudioEncoderLoader"
+    ],
+    "path": "labs/05-model-families/E15.md"
+  },
+  {
+    "id": "E16",
+    "title": "VOID 视频修补与光流噪声",
+    "prerequisites": [
+      "C02",
+      "B05",
+      "B07"
+    ],
+    "nodes": [
+      "VOIDQuadmaskPreprocess",
+      "VOIDInpaintConditioning",
+      "VOIDWarpedNoise",
+      "VOIDWarpedNoiseSource",
+      "OpticalFlowLoader",
+      "VOIDSampler"
+    ],
+    "path": "labs/05-model-families/E16.md"
+  },
+  {
+    "id": "E17",
+    "title": "Hunyuan 三维生成与体素网格",
+    "prerequisites": [
+      "B07",
+      "B14",
+      "F01"
+    ],
+    "nodes": [
+      "VoxelToMesh",
+      "VoxelToMeshBasic",
+      "Hunyuan3Dv2Conditioning",
+      "Hunyuan3Dv2ConditioningMultiView",
+      "EmptyLatentHunyuan3Dv2",
+      "VAEDecodeHunyuan3D"
+    ],
+    "path": "labs/05-model-families/E17.md"
+  },
+  {
+    "id": "E18",
+    "title": "Trellis 与其它三维阶段条件",
+    "prerequisites": [
+      "B07",
+      "F01"
+    ],
+    "nodes": [
+      "BerniniConditioning",
+      "Pixal3DConditioning",
+      "Trellis2UpsampleStage",
+      "Trellis2Conditioning",
+      "Trellis2ShapeStage",
+      "Trellis2TextureStage",
+      "EmptyTrellis2LatentStructure",
+      "VaeDecodeShapeTrellis",
+      "VaeDecodeStructureTrellis2",
+      "VaeDecodeTextureTrellis"
+    ],
+    "path": "labs/05-model-families/E18.md"
+  },
+  {
+    "id": "E19",
+    "title": "TripoSplat 生成",
+    "prerequisites": [
+      "B07",
+      "F01"
+    ],
+    "nodes": [
+      "TripoSplatConditioning",
+      "TripoSplatPreprocessImage",
+      "VAEDecodeTripoSplat",
+      "TripoSplatSamplingPreview"
+    ],
+    "path": "labs/05-model-families/E19.md"
+  },
+  {
+    "id": "E20",
+    "title": "多视角图像与相机条件",
+    "prerequisites": [
+      "B07",
+      "F01"
+    ],
+    "nodes": [
+      "SV3D_Conditioning",
+      "StableZero123_Conditioning",
+      "StableZero123_Conditioning_Batched"
+    ],
+    "path": "labs/05-model-families/E20.md"
+  },
+  {
+    "id": "E21",
+    "title": "音频 VAE 与音频生成家族",
+    "prerequisites": [
+      "B07",
+      "C03"
+    ],
+    "nodes": [
+      "ReferenceTimbreAudio",
+      "TextEncodeAceStepAudio",
+      "TextEncodeAceStepAudio1.5",
+      "MiniMaxMusic3TextEncode",
+      "ConditioningStableAudio",
+      "EmptyLatentAudio",
+      "VAEEncodeAudio",
+      "EmptyAceStepLatentAudio",
+      "EmptyAceStep1.5LatentAudio",
+      "EmptyMiniMaxMusic3LatentAudio"
+    ],
+    "path": "labs/05-model-families/E21.md"
+  },
+  {
+    "id": "E22",
+    "title": "SeedVR2 与 SUPIR 修复",
+    "prerequisites": [
+      "C04",
+      "B04"
+    ],
+    "nodes": [
+      "SeedVR2PostProcessing",
+      "SeedVR2Preprocess",
+      "SeedVR2Conditioning",
+      "SeedVR2TemporalMerge",
+      "SeedVR2TemporalChunk",
+      "SUPIRApply"
+    ],
+    "path": "labs/05-model-families/E22.md"
+  },
+  {
+    "id": "E23",
+    "title": "语言生成与专用提示词",
+    "prerequisites": [
+      "A03",
+      "B01"
+    ],
+    "nodes": [
+      "Ideogram4Scheduler",
+      "TextGenerateLTX2Prompt",
+      "TextGenerate"
+    ],
+    "path": "labs/05-model-families/E23.md"
+  },
+  {
+    "id": "E24",
+    "title": "扩展模型补丁加载",
+    "prerequisites": [
+      "B12",
+      "G01"
+    ],
+    "nodes": [
+      "HypernetworkLoader",
+      "ModelPatchLoader",
+      "AnimaLLLiteApply"
+    ],
+    "path": "labs/05-model-families/E24.md"
+  }
+]

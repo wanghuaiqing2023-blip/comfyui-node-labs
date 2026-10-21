@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+models/
+output/
+*.safetensors
+*.ckpt
+*.gguf
+*.pt
+*.pth
+.DS_Store

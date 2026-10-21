@@ -1,0 +1,103 @@
+# 补丁优化与训练节点索引
+
+[索引总目录](README.md) · [实验目录](../labs/07-advanced/README.md)
+
+共 95 个节点。按类名排序；状态反映实验是否执行，不把设计覆盖当作通过。
+
+| 内部类名 | 实验组 | 验证状态 |
+|---|---|---|
+| `CheckpointSave` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ChromaRadianceOptions` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `CLIPAttentionMultiply` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `CLIPMergeAdd` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `CLIPMergeSimple` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `CLIPMergeSubtract` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `CLIPSave` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `CombineHooks2` | [G02](../labs/07-advanced/G02.md) | 待执行 |
+| `CombineHooks4` | [G02](../labs/07-advanced/G02.md) | 待执行 |
+| `CombineHooks8` | [G02](../labs/07-advanced/G02.md) | 待执行 |
+| `ConditioningSetDefaultCombine` | [G02](../labs/07-advanced/G02.md) | 待执行 |
+| `ConditioningSetProperties` | [G02](../labs/07-advanced/G02.md) | 待执行 |
+| `ConditioningSetPropertiesAndCombine` | [G02](../labs/07-advanced/G02.md) | 待执行 |
+| `ContextWindowsManual` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `CreateHookKeyframe` | [G02](../labs/07-advanced/G02.md) | 待执行 |
+| `CreateHookKeyframesFromFloats` | [G02](../labs/07-advanced/G02.md) | 待核对 FLOATS 来源 |
+| `CreateHookKeyframesInterpolated` | [G02](../labs/07-advanced/G02.md) | 待执行 |
+| `CreateHookLora` | [G02](../labs/07-advanced/G02.md) | 待执行 |
+| `CreateHookLoraModelOnly` | [G02](../labs/07-advanced/G02.md) | 待执行 |
+| `CreateHookModelAsLora` | [G02](../labs/07-advanced/G02.md) | 待执行 |
+| `CreateHookModelAsLoraModelOnly` | [G02](../labs/07-advanced/G02.md) | 待执行 |
+| `EasyCache` | [G04](../labs/07-advanced/G04.md) | 待执行 |
+| `Epsilon Scaling` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `FluxKVCache` | [G04](../labs/07-advanced/G04.md) | 待执行 |
+| `FreeU` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `FreeU_V2` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `HiDreamO1PatchSeamSmoothing` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `HyperTile` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `ImageOnlyCheckpointSave` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `LazyCache` | [G04](../labs/07-advanced/G04.md) | 待执行 |
+| `LoadTrainingDataset` | [G05](../labs/07-advanced/G05.md) | 待执行 |
+| `LoraSave` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `LossGraphNode` | [G05](../labs/07-advanced/G05.md) | 待执行 |
+| `LTXVContextWindows` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `MakeTrainingDataset` | [G05](../labs/07-advanced/G05.md) | 待执行 |
+| `ModelAttentionBackend` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `ModelComputeDtype` | [G04](../labs/07-advanced/G04.md) | 待执行 |
+| `ModelMergeAdd` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelMergeAuraflow` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelMergeBlocks` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelMergeCosmos14B` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelMergeCosmos7B` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelMergeCosmosPredict2_14B` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelMergeCosmosPredict2_2B` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelMergeFlux1` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelMergeKrea2` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelMergeLTXV` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelMergeMochiPreview` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelMergeQwenImage` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelMergeSD1` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelMergeSD2` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelMergeSD35_Large` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelMergeSD3_2B` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelMergeSDXL` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelMergeSimple` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelMergeSubtract` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelMergeWAN2_1` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `ModelNoiseScale` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `ModelSamplingAuraFlow` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `ModelSamplingContinuousEDM` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `ModelSamplingContinuousV` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `ModelSamplingDiscrete` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `ModelSamplingFlux` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `ModelSamplingLTXV` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `ModelSamplingSD3` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `ModelSamplingStableCascade` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `ModelSave` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `MultiGPU_WorkUnits` | [G04](../labs/07-advanced/G04.md) | 待执行 |
+| `PairConditioningCombine` | [G02](../labs/07-advanced/G02.md) | 待执行 |
+| `PairConditioningSetDefaultCombine` | [G02](../labs/07-advanced/G02.md) | 待执行 |
+| `PairConditioningSetProperties` | [G02](../labs/07-advanced/G02.md) | 待执行 |
+| `PairConditioningSetPropertiesAndCombine` | [G02](../labs/07-advanced/G02.md) | 待执行 |
+| `PatchModelAddDownscale` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `PerturbedAttentionGuidance` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `RenormCFG` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `RescaleCFG` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `ResolutionBucket` | [G05](../labs/07-advanced/G05.md) | 待执行 |
+| `SaveLoRA` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `SaveTrainingDataset` | [G05](../labs/07-advanced/G05.md) | 待执行 |
+| `ScaleROPE` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `SelectCLIPDevice` | [G04](../labs/07-advanced/G04.md) | 待执行 |
+| `SelectModelDevice` | [G04](../labs/07-advanced/G04.md) | 待执行 |
+| `SelectVAEDevice` | [G04](../labs/07-advanced/G04.md) | 待执行 |
+| `SetClipHooks` | [G02](../labs/07-advanced/G02.md) | 待执行 |
+| `SetHookKeyframes` | [G02](../labs/07-advanced/G02.md) | 待执行 |
+| `TemporalScoreRescaling` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `TomePatchModel` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `TorchCompileModel` | [G04](../labs/07-advanced/G04.md) | 待执行 |
+| `TrainLoraNode` | [G05](../labs/07-advanced/G05.md) | 待执行 |
+| `UNetCrossAttentionMultiply` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `UNetSelfAttentionMultiply` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `UNetTemporalAttentionMultiply` | [G01](../labs/07-advanced/G01.md) | 待执行 |
+| `VAESave` | [G03](../labs/07-advanced/G03.md) | 待执行 |
+| `wanBlockSwap` | [G06](../labs/07-advanced/G06.md) | 待执行 |
+| `WanContextWindowsManual` | [G01](../labs/07-advanced/G01.md) | 待执行 |

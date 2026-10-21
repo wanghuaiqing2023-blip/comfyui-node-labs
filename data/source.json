@@ -1,0 +1,10 @@
+{
+  "source_repository": "wanghuaiqing2023-blip/comfyui-learning-hub",
+  "source_commit": "3e2e4c43e778e41a9bc577edd8ee3d25ad095471",
+  "source_blob": "be7fcb86b0dd687ea93554e68b5a803b5d36ab4f",
+  "comfyui_version_claimed_by_index": "0.33.0",
+  "nodes": 639,
+  "experiments": 78,
+  "designed_on": "2026-10-21",
+  "execution_status": "not_run"
+}

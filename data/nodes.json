@@ -1,0 +1,5114 @@
+[
+  {
+    "class_name": "BuildPoseFile",
+    "experiment": "F10",
+    "required_types": "MHR_POSE_DATA,KIMODO_POSE_DATA、COMFY_DYNAMICCOMBO_V3、FLOAT、COMBO、INT",
+    "output_types": "FILE_3D",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MeshToFile3D",
+    "experiment": "F03",
+    "required_types": "MESH",
+    "output_types": "FILE_3D_GLB",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CreateCameraInfo",
+    "experiment": "F01",
+    "required_types": "COMFY_DYNAMICCOMBO_V3、FLOAT、COMBO",
+    "output_types": "LOAD3D_CAMERA",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Load3D",
+    "experiment": "F01",
+    "required_types": "COMBO、LOAD_3D、INT",
+    "output_types": "IMAGE、MASK、STRING、LOAD3D_CAMERA、VIDEO、FILE_3D、LOAD3D_MODEL_INFO",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Load3DAdvanced",
+    "experiment": "F01",
+    "required_types": "COMBO、LOAD_3D、INT",
+    "output_types": "FILE_3D、LOAD3D_MODEL_INFO、LOAD3D_CAMERA、INT",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Preview3D",
+    "experiment": "F01",
+    "required_types": "STRING,FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_FBX,FILE_3D_OBJ,FILE_3D_STL,FILE_3D_USDZ,FILE_3D",
+    "output_types": "无",
+    "flags": "实验性；输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Preview3DAdvanced",
+    "experiment": "F01",
+    "required_types": "FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_FBX,FILE_3D_OBJ,FILE_3D_STL,FILE_3D_USDZ,FILE_3D、LOAD_3D、INT",
+    "output_types": "FILE_3D、LOAD3D_MODEL_INFO、LOAD3D_CAMERA、INT",
+    "flags": "实验性；输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PreviewPointCloud",
+    "experiment": "F01",
+    "required_types": "FILE_3D_POINT_CLOUD_ANY,FILE_3D_PLY、LOAD_3D、INT",
+    "output_types": "FILE_3D_POINT_CLOUD_ANY、LOAD3D_MODEL_INFO、LOAD3D_CAMERA、INT",
+    "flags": "实验性；输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PreviewGaussianSplat",
+    "experiment": "F05",
+    "required_types": "FILE_3D_SPLAT_ANY,FILE_3D_PLY,FILE_3D_SPLAT,FILE_3D_SPZ,FILE_3D_KSPLAT、LOAD_3D、INT",
+    "output_types": "FILE_3D_SPLAT_ANY、LOAD3D_MODEL_INFO、LOAD3D_CAMERA、INT",
+    "flags": "实验性；输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Save3DAdvanced",
+    "experiment": "F01",
+    "required_types": "FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_FBX,FILE_3D_OBJ,FILE_3D_STL,FILE_3D_USDZ,FILE_3D、STRING、LOAD_3D、INT",
+    "output_types": "FILE_3D、LOAD3D_MODEL_INFO、LOAD3D_CAMERA、INT",
+    "flags": "实验性；输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SaveGLB",
+    "experiment": "F01",
+    "required_types": "MESH,FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_OBJ,FILE_3D_FBX,FILE_3D_STL,FILE_3D_USDZ,FILE_3D_PLY,FILE_3D_SPLAT,FILE_3D_SPZ,FILE_3D_KSPLAT,FILE_3D_SPLAT_ANY,FILE_3D_POINT_CLOUD_ANY,FILE_3D、STRING",
+    "output_types": "无",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SavePointCloud",
+    "experiment": "F01",
+    "required_types": "FILE_3D_POINT_CLOUD_ANY,FILE_3D_PLY、STRING、LOAD_3D、INT",
+    "output_types": "FILE_3D_POINT_CLOUD_ANY、LOAD3D_MODEL_INFO、LOAD3D_CAMERA、INT",
+    "flags": "实验性；输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SaveGaussianSplat",
+    "experiment": "F05",
+    "required_types": "FILE_3D_SPLAT_ANY,FILE_3D_PLY,FILE_3D_SPLAT,FILE_3D_SPZ,FILE_3D_KSPLAT、STRING、LOAD_3D、INT",
+    "output_types": "FILE_3D_SPLAT_ANY、LOAD3D_MODEL_INFO、LOAD3D_CAMERA、INT",
+    "flags": "实验性；输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VoxelToMesh",
+    "experiment": "E17",
+    "required_types": "VOXEL、COMBO、FLOAT",
+    "output_types": "MESH",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VoxelToMeshBasic",
+    "experiment": "E17",
+    "required_types": "VOXEL、FLOAT",
+    "output_types": "MESH",
+    "flags": "已弃用",
+    "status": "待执行"
+  },
+  {
+    "class_name": "DecimateMesh",
+    "experiment": "F03",
+    "required_types": "MESH、INT、COMFY_DYNAMICCOMBO_V3",
+    "output_types": "MESH",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "FillHoles",
+    "experiment": "F03",
+    "required_types": "MESH、FLOAT、INT、BOOLEAN",
+    "output_types": "MESH",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "GetMeshInfo",
+    "experiment": "F03",
+    "required_types": "MESH",
+    "output_types": "MESH、STRING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MergeMeshes",
+    "experiment": "F03",
+    "required_types": "COMFY_AUTOGROW_V3",
+    "output_types": "MESH",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PaintMesh",
+    "experiment": "F03",
+    "required_types": "MESH、VOXEL",
+    "output_types": "MESH",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "RemeshMesh",
+    "experiment": "F03",
+    "required_types": "MESH、INT、COMFY_DYNAMICCOMBO_V3、FLOAT、BOOLEAN",
+    "output_types": "MESH",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "RenderMesh",
+    "experiment": "F03",
+    "required_types": "MESH、COMBO、INT、COLOR",
+    "output_types": "IMAGE、MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "RotateMesh",
+    "experiment": "F03",
+    "required_types": "MESH、COMFY_DYNAMICCOMBO_V3",
+    "output_types": "MESH",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MeshSmoothNormals",
+    "experiment": "F03",
+    "required_types": "MESH、FLOAT",
+    "output_types": "MESH",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WeldVertices",
+    "experiment": "F03",
+    "required_types": "MESH、FLOAT",
+    "output_types": "MESH",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SplatToFile3D",
+    "experiment": "F05",
+    "required_types": "SPLAT、COMBO",
+    "output_types": "FILE_3D_SPLAT_ANY",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SplatToMesh",
+    "experiment": "F05",
+    "required_types": "SPLAT、INT、FLOAT",
+    "output_types": "MESH",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "File3DToSplat",
+    "experiment": "F05",
+    "required_types": "FILE_3D,FILE_3D_SPLAT_ANY,FILE_3D_PLY,FILE_3D_SPLAT,FILE_3D_KSPLAT,FILE_3D_SPZ",
+    "output_types": "SPLAT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "GetSplatCount",
+    "experiment": "F05",
+    "required_types": "SPLAT",
+    "output_types": "SPLAT、INT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MergeSplat",
+    "experiment": "F05",
+    "required_types": "COMFY_AUTOGROW_V3",
+    "output_types": "SPLAT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "RenderSplat",
+    "experiment": "F05",
+    "required_types": "SPLAT、INT、FLOAT、COMBO、COLOR",
+    "output_types": "IMAGE、MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TransformSplat",
+    "experiment": "F05",
+    "required_types": "SPLAT、FLOAT",
+    "output_types": "SPLAT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ApplyTextureToMesh",
+    "experiment": "F04",
+    "required_types": "MESH、IMAGE",
+    "output_types": "MESH",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "BakeAmbientOcclusion",
+    "experiment": "F04",
+    "required_types": "MESH、INT、FLOAT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "BakeNormalMapFromMesh",
+    "experiment": "F04",
+    "required_types": "MESH、INT、FLOAT、BOOLEAN",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "BakeTextureFromVoxel",
+    "experiment": "F04",
+    "required_types": "MESH、VOXEL、INT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MeshTextureToImage",
+    "experiment": "F04",
+    "required_types": "MESH",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "RenderUVAtlas",
+    "experiment": "F04",
+    "required_types": "MESH、INT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "UnwrapMesh",
+    "experiment": "F04",
+    "required_types": "MESH、COMBO、INT、FLOAT",
+    "output_types": "MESH",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EasyCache",
+    "experiment": "G04",
+    "required_types": "MODEL、FLOAT、BOOLEAN",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LazyCache",
+    "experiment": "G04",
+    "required_types": "MODEL、FLOAT、BOOLEAN",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelComputeDtype",
+    "experiment": "G04",
+    "required_types": "MODEL、COMBO",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CFGNorm",
+    "experiment": "B10",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CFGZeroStar",
+    "experiment": "B10",
+    "required_types": "MODEL",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVModalityGuidance",
+    "experiment": "B10",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVSpatioTemporalGuidance",
+    "experiment": "B10",
+    "required_types": "MODEL、FLOAT、STRING",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "NAGuidance",
+    "experiment": "B10",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SkipLayerGuidanceDiT",
+    "experiment": "B10",
+    "required_types": "MODEL、STRING、FLOAT",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SkipLayerGuidanceDiTSimple",
+    "experiment": "B10",
+    "required_types": "MODEL、STRING、FLOAT",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SkipLayerGuidanceSD3",
+    "experiment": "B10",
+    "required_types": "MODEL、STRING、FLOAT",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TCFG",
+    "experiment": "B10",
+    "required_types": "MODEL",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ConditioningTimestepsRange",
+    "experiment": "B11",
+    "required_types": "FLOAT",
+    "output_types": "TIMESTEPS_RANGE",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SetClipHooks",
+    "experiment": "G02",
+    "required_types": "CLIP、BOOLEAN",
+    "output_types": "CLIP",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CombineHooks2",
+    "experiment": "G02",
+    "required_types": "无",
+    "output_types": "HOOKS",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CombineHooks4",
+    "experiment": "G02",
+    "required_types": "无",
+    "output_types": "HOOKS",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CombineHooks8",
+    "experiment": "G02",
+    "required_types": "无",
+    "output_types": "HOOKS",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PairConditioningCombine",
+    "experiment": "G02",
+    "required_types": "CONDITIONING",
+    "output_types": "CONDITIONING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PairConditioningSetDefaultCombine",
+    "experiment": "G02",
+    "required_types": "CONDITIONING",
+    "output_types": "CONDITIONING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PairConditioningSetProperties",
+    "experiment": "G02",
+    "required_types": "CONDITIONING、FLOAT、COMBO",
+    "output_types": "CONDITIONING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PairConditioningSetPropertiesAndCombine",
+    "experiment": "G02",
+    "required_types": "CONDITIONING、FLOAT、COMBO",
+    "output_types": "CONDITIONING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ConditioningSetDefaultCombine",
+    "experiment": "G02",
+    "required_types": "CONDITIONING",
+    "output_types": "CONDITIONING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ConditioningSetProperties",
+    "experiment": "G02",
+    "required_types": "CONDITIONING、FLOAT、COMBO",
+    "output_types": "CONDITIONING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ConditioningSetPropertiesAndCombine",
+    "experiment": "G02",
+    "required_types": "CONDITIONING、FLOAT、COMBO",
+    "output_types": "CONDITIONING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CreateHookLora",
+    "experiment": "G02",
+    "required_types": "COMBO、FLOAT",
+    "output_types": "HOOKS",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CreateHookLoraModelOnly",
+    "experiment": "G02",
+    "required_types": "COMBO、FLOAT",
+    "output_types": "HOOKS",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CreateHookModelAsLora",
+    "experiment": "G02",
+    "required_types": "COMBO、FLOAT",
+    "output_types": "HOOKS",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CreateHookModelAsLoraModelOnly",
+    "experiment": "G02",
+    "required_types": "COMBO、FLOAT",
+    "output_types": "HOOKS",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CreateHookKeyframe",
+    "experiment": "G02",
+    "required_types": "FLOAT",
+    "output_types": "HOOK_KEYFRAMES",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CreateHookKeyframesFromFloats",
+    "experiment": "G02",
+    "required_types": "FLOATS、FLOAT、BOOLEAN",
+    "output_types": "HOOK_KEYFRAMES",
+    "flags": "实验性",
+    "status": "待核对 FLOATS 来源"
+  },
+  {
+    "class_name": "CreateHookKeyframesInterpolated",
+    "experiment": "G02",
+    "required_types": "FLOAT、COMBO、INT、BOOLEAN",
+    "output_types": "HOOK_KEYFRAMES",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SetHookKeyframes",
+    "experiment": "G02",
+    "required_types": "HOOKS",
+    "output_types": "HOOKS",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MultiGPU_WorkUnits",
+    "experiment": "G04",
+    "required_types": "MODEL、INT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SelectCLIPDevice",
+    "experiment": "G04",
+    "required_types": "CLIP、COMBO",
+    "output_types": "CLIP",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SelectModelDevice",
+    "experiment": "G04",
+    "required_types": "MODEL、COMBO",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SelectVAEDevice",
+    "experiment": "G04",
+    "required_types": "VAE、COMBO",
+    "output_types": "VAE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "AudioAdjustVolume",
+    "experiment": "C03",
+    "required_types": "AUDIO、INT",
+    "output_types": "AUDIO",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "AudioEqualizer3Band",
+    "experiment": "C03",
+    "required_types": "AUDIO、FLOAT、INT",
+    "output_types": "AUDIO",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "AudioConcat",
+    "experiment": "C03",
+    "required_types": "AUDIO、COMBO",
+    "output_types": "AUDIO",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyAudio",
+    "experiment": "C03",
+    "required_types": "FLOAT、INT",
+    "output_types": "AUDIO",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "JoinAudioChannels",
+    "experiment": "C03",
+    "required_types": "AUDIO",
+    "output_types": "AUDIO",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoadAudio",
+    "experiment": "C03",
+    "required_types": "COMBO",
+    "output_types": "AUDIO",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "AudioMerge",
+    "experiment": "C03",
+    "required_types": "AUDIO、COMBO",
+    "output_types": "AUDIO",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PreviewAudio",
+    "experiment": "C03",
+    "required_types": "AUDIO",
+    "output_types": "AUDIO",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "RecordAudio",
+    "experiment": "C03",
+    "required_types": "AUDIO_RECORD",
+    "output_types": "AUDIO",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SaveAudioAdvanced",
+    "experiment": "C03",
+    "required_types": "AUDIO、STRING、COMFY_DYNAMICCOMBO_V3",
+    "output_types": "AUDIO",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SaveAudio",
+    "experiment": "C03",
+    "required_types": "AUDIO、STRING",
+    "output_types": "AUDIO",
+    "flags": "已弃用；输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SaveAudioMP3",
+    "experiment": "C03",
+    "required_types": "AUDIO、STRING、COMBO",
+    "output_types": "AUDIO",
+    "flags": "已弃用；输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SaveAudioOpus",
+    "experiment": "C03",
+    "required_types": "AUDIO、STRING、COMBO",
+    "output_types": "AUDIO",
+    "flags": "已弃用；输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SplitAudioChannels",
+    "experiment": "C03",
+    "required_types": "AUDIO",
+    "output_types": "AUDIO",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TrimAudioDuration",
+    "experiment": "C03",
+    "required_types": "AUDIO、FLOAT",
+    "output_types": "AUDIO",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVDurationPredictor",
+    "experiment": "E07",
+    "required_types": "MODEL、CONDITIONING、MODEL_PATCH、FLOAT",
+    "output_types": "INT、FLOAT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ShuffleVideoTextDataset",
+    "experiment": "C05",
+    "required_types": "VIDEO、STRING、INT",
+    "output_types": "VIDEO、STRING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "DifferentialDiffusion",
+    "experiment": "E06",
+    "required_types": "MODEL",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoraSave",
+    "experiment": "G03",
+    "required_types": "STRING、INT、COMBO、BOOLEAN",
+    "output_types": "无",
+    "flags": "实验性；输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "FluxKVCache",
+    "experiment": "G04",
+    "required_types": "MODEL",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "FreSca",
+    "experiment": "B10",
+    "required_types": "MODEL、FLOAT、INT",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentBlend",
+    "experiment": "B06",
+    "required_types": "LATENT、FLOAT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PerpNeg",
+    "experiment": "B10",
+    "required_types": "MODEL、CONDITIONING、FLOAT",
+    "output_types": "MODEL",
+    "flags": "已弃用；实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PerpNegGuider",
+    "experiment": "B10",
+    "required_types": "MODEL、CONDITIONING、FLOAT",
+    "output_types": "GUIDER",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Mahiro",
+    "experiment": "B10",
+    "required_types": "MODEL",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SamplerEulerCFGpp",
+    "experiment": "B09",
+    "required_types": "COMBO",
+    "output_types": "SAMPLER",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SelfAttentionGuidance",
+    "experiment": "B10",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TorchCompileModel",
+    "experiment": "G04",
+    "required_types": "MODEL、COMBO",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPAttentionMultiply",
+    "experiment": "G01",
+    "required_types": "CLIP、FLOAT",
+    "output_types": "CLIP",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "UNetCrossAttentionMultiply",
+    "experiment": "G01",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "UNetSelfAttentionMultiply",
+    "experiment": "G01",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "UNetTemporalAttentionMultiply",
+    "experiment": "G01",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "StableCascade_SuperResolutionControlnet",
+    "experiment": "E06",
+    "required_types": "IMAGE、VAE",
+    "output_types": "IMAGE、LATENT",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "AddLayer",
+    "experiment": "A10",
+    "required_types": "IMAGE",
+    "output_types": "LAYERS",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageCompare",
+    "experiment": "A01",
+    "required_types": "IMAGECOMPARE",
+    "output_types": "无",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageCompositor",
+    "experiment": "A10",
+    "required_types": "LAYERS、COMPOSITOR",
+    "output_types": "IMAGE、MASK",
+    "flags": "实验性；输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyImage",
+    "experiment": "A11",
+    "required_types": "INT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "GetImageSize",
+    "experiment": "A01",
+    "required_types": "IMAGE",
+    "output_types": "INT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LayersFromBoundingBoxes",
+    "experiment": "A10",
+    "required_types": "IMAGE、BOUNDING_BOX,ARRAY,STRING",
+    "output_types": "LAYERS",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoadImage",
+    "experiment": "A01",
+    "required_types": "COMBO",
+    "output_types": "IMAGE、MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoadImageMask",
+    "experiment": "A07",
+    "required_types": "COMBO",
+    "output_types": "MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoadImageDataSetFromFolder",
+    "experiment": "A12",
+    "required_types": "COMBO",
+    "output_types": "IMAGE",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoadImageOutput",
+    "experiment": "A01",
+    "required_types": "COMBO",
+    "output_types": "IMAGE、MASK",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoadImageTextDataSetFromFolder",
+    "experiment": "A12",
+    "required_types": "COMBO",
+    "output_types": "IMAGE、STRING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Painter",
+    "experiment": "A11",
+    "required_types": "STRING、INT、COLOR",
+    "output_types": "IMAGE、MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PreviewImage",
+    "experiment": "A01",
+    "required_types": "IMAGE",
+    "output_types": "IMAGE",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SaveAnimatedPNG",
+    "experiment": "A11",
+    "required_types": "IMAGE、STRING、FLOAT、INT",
+    "output_types": "IMAGE",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SaveAnimatedWEBP",
+    "experiment": "A11",
+    "required_types": "IMAGE、STRING、FLOAT、BOOLEAN、INT、COMBO",
+    "output_types": "IMAGE",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SaveImage",
+    "experiment": "A01",
+    "required_types": "IMAGE、STRING",
+    "output_types": "IMAGE",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SaveImageAdvanced",
+    "experiment": "A11",
+    "required_types": "IMAGE、STRING、COMFY_DYNAMICCOMBO_V3",
+    "output_types": "IMAGE",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SaveImageDataSetToFolder",
+    "experiment": "A12",
+    "required_types": "IMAGE、STRING、COMBO",
+    "output_types": "无",
+    "flags": "已弃用；实验性；输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SaveImageTextDataSetToFolder",
+    "experiment": "A12",
+    "required_types": "IMAGE、STRING、COMBO",
+    "output_types": "无",
+    "flags": "实验性；输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SaveSVGNode",
+    "experiment": "A11",
+    "required_types": "SVG、STRING",
+    "output_types": "SVG",
+    "flags": "输出节点",
+    "status": "缺 SVG 上游"
+  },
+  {
+    "class_name": "WebcamCapture",
+    "experiment": "A11",
+    "required_types": "WEBCAM、INT、BOOLEAN",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "AdjustBrightness",
+    "experiment": "A06",
+    "required_types": "IMAGE、FLOAT",
+    "output_types": "IMAGE",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "AdjustContrast",
+    "experiment": "A06",
+    "required_types": "IMAGE、FLOAT",
+    "output_types": "IMAGE",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "RemoveBackground",
+    "experiment": "F06",
+    "required_types": "BACKGROUND_REMOVAL、IMAGE",
+    "output_types": "MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "BatchImagesNode",
+    "experiment": "A09",
+    "required_types": "COMFY_AUTOGROW_V3",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageBatch",
+    "experiment": "A09",
+    "required_types": "IMAGE",
+    "output_types": "IMAGE",
+    "flags": "已弃用",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageDeduplication",
+    "experiment": "A09",
+    "required_types": "IMAGE、FLOAT",
+    "output_types": "IMAGE",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageFromBatch",
+    "experiment": "A09",
+    "required_types": "IMAGE、INT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageGrid",
+    "experiment": "A09",
+    "required_types": "IMAGE、INT",
+    "output_types": "IMAGE",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MergeImageLists",
+    "experiment": "A09",
+    "required_types": "IMAGE",
+    "output_types": "IMAGE",
+    "flags": "已弃用；实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageMergeTileList",
+    "experiment": "A09",
+    "required_types": "IMAGE、INT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "RebatchImages",
+    "experiment": "A09",
+    "required_types": "IMAGE、INT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "RepeatImageBatch",
+    "experiment": "A09",
+    "required_types": "IMAGE、INT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ShuffleDataset",
+    "experiment": "A12",
+    "required_types": "IMAGE、INT",
+    "output_types": "IMAGE",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ShuffleImageTextDataset",
+    "experiment": "A12",
+    "required_types": "IMAGE、STRING、INT",
+    "output_types": "IMAGE、STRING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SplitImageToTileList",
+    "experiment": "A09",
+    "required_types": "IMAGE、INT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageRGBToYUV",
+    "experiment": "A06",
+    "required_types": "IMAGE",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageYUVToRGB",
+    "experiment": "A06",
+    "required_types": "IMAGE",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageInvert",
+    "experiment": "A06",
+    "required_types": "IMAGE",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "NormalizeImages",
+    "experiment": "A06",
+    "required_types": "IMAGE、FLOAT",
+    "output_types": "IMAGE",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageCompositeMasked",
+    "experiment": "A08",
+    "required_types": "IMAGE、INT、BOOLEAN",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "JoinImageWithAlpha",
+    "experiment": "A08",
+    "required_types": "IMAGE、MASK",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PorterDuffImageComposite",
+    "experiment": "A08",
+    "required_types": "IMAGE、MASK、COMBO",
+    "output_types": "IMAGE、MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SplitImageWithAlpha",
+    "experiment": "A08",
+    "required_types": "IMAGE",
+    "output_types": "IMAGE、MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MediaPipeFaceLandmarker",
+    "experiment": "F11",
+    "required_types": "FACE_DETECTION_MODEL、IMAGE、COMBO、INT、FLOAT",
+    "output_types": "FACE_LANDMARKS、BOUNDING_BOX",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "DrawBBoxes",
+    "experiment": "A10",
+    "required_types": "BOUNDING_BOX",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MediaPipeFaceMask",
+    "experiment": "F11",
+    "required_types": "FACE_LANDMARKS、COMFY_DYNAMICCOMBO_V3",
+    "output_types": "MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SAM3DBody_FaceExpression",
+    "experiment": "F11",
+    "required_types": "SAM3D_BODY_MODEL、MHR_POSE_DATA、IMAGE、FLOAT、INT",
+    "output_types": "MHR_POSE_DATA",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SAM3DBody_Loader",
+    "experiment": "F08",
+    "required_types": "COMBO",
+    "output_types": "SAM3D_BODY_MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SAM3DBody_Render",
+    "experiment": "F08",
+    "required_types": "MHR_POSE_DATA,KIMODO_POSE_DATA、INT、COMFY_DYNAMICCOMBO_V3",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "RTDETR_detect",
+    "experiment": "F06",
+    "required_types": "MODEL、IMAGE、FLOAT、COMBO、INT",
+    "output_types": "BOUNDING_BOX",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SAM3_VideoTrack",
+    "experiment": "F07",
+    "required_types": "IMAGE、MODEL、FLOAT、INT",
+    "output_types": "SAM3_TRACK_DATA",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SAM3DBody_Predict",
+    "experiment": "F08",
+    "required_types": "SAM3D_BODY_MODEL、IMAGE、BOOLEAN、FLOAT、INT",
+    "output_types": "MHR_POSE_DATA",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SAM3_Detect",
+    "experiment": "F06",
+    "required_types": "MODEL、IMAGE、FLOAT、INT、BOOLEAN",
+    "output_types": "MASK、BOUNDING_BOX",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SAM3_TrackPreview",
+    "experiment": "F07",
+    "required_types": "SAM3_TRACK_DATA、FLOAT",
+    "output_types": "无",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SAM3_TrackToMask",
+    "experiment": "F07",
+    "required_types": "SAM3_TRACK_DATA、STRING",
+    "output_types": "MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SDPoseDrawKeypoints",
+    "experiment": "F12",
+    "required_types": "POSE_KEYPOINT、BOOLEAN、INT、FLOAT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SDPoseFaceBBoxes",
+    "experiment": "F12",
+    "required_types": "POSE_KEYPOINT、FLOAT、BOOLEAN",
+    "output_types": "BOUNDING_BOX",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SDPoseKeypointExtractor",
+    "experiment": "F12",
+    "required_types": "MODEL、VAE、IMAGE、INT",
+    "output_types": "POSE_KEYPOINT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SAM3DBody_Smooth",
+    "experiment": "F09",
+    "required_types": "MHR_POSE_DATA、FLOAT、COMBO、INT",
+    "output_types": "MHR_POSE_DATA",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MediaPipeFaceMeshVisualize",
+    "experiment": "F11",
+    "required_types": "FACE_LANDMARKS、COMFY_DYNAMICCOMBO_V3、COLOR、INT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageAddNoise",
+    "experiment": "A06",
+    "required_types": "IMAGE、INT、FLOAT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Morphology",
+    "experiment": "A06",
+    "required_types": "IMAGE、COMBO、INT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageBlend",
+    "experiment": "A06",
+    "required_types": "IMAGE、FLOAT、COMBO",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageBlur",
+    "experiment": "A06",
+    "required_types": "IMAGE、INT、FLOAT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Canny",
+    "experiment": "A06",
+    "required_types": "IMAGE、FLOAT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageQuantize",
+    "experiment": "A06",
+    "required_types": "IMAGE、INT、COMBO",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageSharpen",
+    "experiment": "A06",
+    "required_types": "IMAGE、INT、FLOAT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ColorTransfer",
+    "experiment": "A06",
+    "required_types": "IMAGE、COMBO、COMFY_DYNAMICCOMBO_V3、FLOAT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "DA3GeometryToMesh",
+    "experiment": "F02",
+    "required_types": "DA3_GEOMETRY、INT、FLOAT、BOOLEAN",
+    "output_types": "MESH",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MoGePointMapToMesh",
+    "experiment": "F02",
+    "required_types": "MOGE_GEOMETRY、INT、FLOAT、BOOLEAN",
+    "output_types": "MESH",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MoGeGeometryToFOV",
+    "experiment": "F02",
+    "required_types": "MOGE_GEOMETRY、COMBO",
+    "output_types": "FLOAT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "DA3Render",
+    "experiment": "F02",
+    "required_types": "DA3_GEOMETRY、COMFY_DYNAMICCOMBO_V3",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MoGeRender",
+    "experiment": "F02",
+    "required_types": "MOGE_GEOMETRY、COMBO",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "DA3Inference",
+    "experiment": "F02",
+    "required_types": "DA3_MODEL、IMAGE、INT、COMBO、COMFY_DYNAMICCOMBO_V3",
+    "output_types": "DA3_GEOMETRY",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MoGeInference",
+    "experiment": "F02",
+    "required_types": "MOGE_MODEL、IMAGE、INT、FLOAT、BOOLEAN",
+    "output_types": "MOGE_GEOMETRY",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MoGePanoramaInference",
+    "experiment": "F02",
+    "required_types": "MOGE_MODEL、IMAGE、INT",
+    "output_types": "MOGE_GEOMETRY",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "BatchMasksNode",
+    "experiment": "A07",
+    "required_types": "COMFY_AUTOGROW_V3",
+    "output_types": "MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MaskComposite",
+    "experiment": "A07",
+    "required_types": "MASK、INT、COMBO",
+    "output_types": "MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageColorToMask",
+    "experiment": "A07",
+    "required_types": "IMAGE、INT",
+    "output_types": "MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageToMask",
+    "experiment": "A07",
+    "required_types": "IMAGE、COMBO",
+    "output_types": "MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MaskToImage",
+    "experiment": "A07",
+    "required_types": "MASK",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SolidMask",
+    "experiment": "A07",
+    "required_types": "FLOAT、INT",
+    "output_types": "MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CropMask",
+    "experiment": "A07",
+    "required_types": "MASK、INT",
+    "output_types": "MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "FeatherMask",
+    "experiment": "A07",
+    "required_types": "MASK、INT",
+    "output_types": "MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "GrowMask",
+    "experiment": "A07",
+    "required_types": "MASK、INT、BOOLEAN",
+    "output_types": "MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "InvertMask",
+    "experiment": "A07",
+    "required_types": "MASK",
+    "output_types": "MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MaskPreview",
+    "experiment": "A07",
+    "required_types": "MASK",
+    "output_types": "MASK",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ThresholdMask",
+    "experiment": "A07",
+    "required_types": "MASK、FLOAT",
+    "output_types": "MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VOIDQuadmaskPreprocess",
+    "experiment": "E16",
+    "required_types": "MASK、INT",
+    "output_types": "MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SeedVR2PostProcessing",
+    "experiment": "E22",
+    "required_types": "IMAGE、COMBO",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SeedVR2Preprocess",
+    "experiment": "E22",
+    "required_types": "IMAGE",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "GLSLShader",
+    "experiment": "A13",
+    "required_types": "STRING、COMFY_DYNAMICCOMBO_V3、COMFY_AUTOGROW_V3",
+    "output_types": "IMAGE",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CropByBBoxes",
+    "experiment": "A10",
+    "required_types": "IMAGE、BOUNDING_BOX、INT、COMBO",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageCropV2",
+    "experiment": "A05",
+    "required_types": "IMAGE、BOUNDING_BOX",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CenterCropImages",
+    "experiment": "A05",
+    "required_types": "IMAGE、INT",
+    "output_types": "IMAGE",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageCrop",
+    "experiment": "A05",
+    "required_types": "IMAGE、INT",
+    "output_types": "IMAGE",
+    "flags": "已弃用",
+    "status": "待执行"
+  },
+  {
+    "class_name": "RandomCropImages",
+    "experiment": "A05",
+    "required_types": "IMAGE、INT",
+    "output_types": "IMAGE",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageCropToMask",
+    "experiment": "A05",
+    "required_types": "IMAGE、MASK、INT、FLOAT、COLOR",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageFlip",
+    "experiment": "A05",
+    "required_types": "IMAGE、COMBO",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImagePadForOutpaint",
+    "experiment": "A05",
+    "required_types": "IMAGE、INT",
+    "output_types": "IMAGE、MASK",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ResizeAndPadImage",
+    "experiment": "A05",
+    "required_types": "IMAGE、INT、COMBO",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ResizeImageMaskNode",
+    "experiment": "A05",
+    "required_types": "COMFY_MATCHTYPE_V3、COMFY_DYNAMICCOMBO_V3、COMBO",
+    "output_types": "COMFY_MATCHTYPE_V3",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ResizeImagesByLongerEdge",
+    "experiment": "A05",
+    "required_types": "IMAGE、INT",
+    "output_types": "IMAGE",
+    "flags": "已弃用；实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ResizeImagesByShorterEdge",
+    "experiment": "A05",
+    "required_types": "IMAGE、INT",
+    "output_types": "IMAGE",
+    "flags": "已弃用；实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageRotate",
+    "experiment": "A05",
+    "required_types": "IMAGE、COMBO",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageStitch",
+    "experiment": "A05",
+    "required_types": "IMAGE、COMBO、BOOLEAN、INT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageScaleToMaxDimension",
+    "experiment": "A05",
+    "required_types": "IMAGE、COMBO、INT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageScaleToTotalPixels",
+    "experiment": "A05",
+    "required_types": "IMAGE、COMBO、FLOAT、INT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageScale",
+    "experiment": "A05",
+    "required_types": "IMAGE、COMBO、INT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageUpscaleWithModel",
+    "experiment": "C04",
+    "required_types": "UPSCALE_MODEL、IMAGE",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageScaleBy",
+    "experiment": "A05",
+    "required_types": "IMAGE、COMBO、FLOAT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanDancerPadKeyframes",
+    "experiment": "E15",
+    "required_types": "IMAGE、INT、AUDIO",
+    "output_types": "IMAGE、MASK、AUDIO",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanDancerPadKeyframesList",
+    "experiment": "E15",
+    "required_types": "IMAGE、INT、AUDIO",
+    "output_types": "IMAGE、MASK、AUDIO",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SeedVR2Conditioning",
+    "experiment": "E22",
+    "required_types": "MODEL、LATENT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "StyleModelApply",
+    "experiment": "B14",
+    "required_types": "CONDITIONING、STYLE_MODEL、CLIP_VISION_OUTPUT、FLOAT、COMBO",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "AudioEncoderEncode",
+    "experiment": "E15",
+    "required_types": "AUDIO_ENCODER、AUDIO",
+    "output_types": "AUDIO_ENCODER_OUTPUT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPSetLastLayer",
+    "experiment": "B01",
+    "required_types": "CLIP、INT",
+    "output_types": "CLIP",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPTextEncodeControlnet",
+    "experiment": "B13",
+    "required_types": "CLIP、CONDITIONING、STRING",
+    "output_types": "CONDITIONING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPTextEncode",
+    "experiment": "B01",
+    "required_types": "STRING、CLIP",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPVisionEncode",
+    "experiment": "B14",
+    "required_types": "CLIP_VISION、IMAGE、COMBO",
+    "output_types": "CLIP_VISION_OUTPUT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "InpaintModelConditioning",
+    "experiment": "B05",
+    "required_types": "CONDITIONING、VAE、IMAGE、MASK、BOOLEAN",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "NormalizeVideoLatentStart",
+    "experiment": "E09",
+    "required_types": "LATENT、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PiDConditioning",
+    "experiment": "E06",
+    "required_types": "CONDITIONING、LATENT、COMBO、FLOAT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ReferenceTimbreAudio",
+    "experiment": "E21",
+    "required_types": "CONDITIONING",
+    "output_types": "CONDITIONING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ReferenceLatent",
+    "experiment": "B14",
+    "required_types": "CONDITIONING",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "T5TokenizerOptions",
+    "experiment": "B01",
+    "required_types": "CLIP、INT",
+    "output_types": "CLIP",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "unCLIPConditioning",
+    "experiment": "B14",
+    "required_types": "CONDITIONING、CLIP_VISION_OUTPUT、FLOAT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TextEncodeAceStepAudio",
+    "experiment": "E21",
+    "required_types": "CLIP、STRING、FLOAT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TextEncodeAceStepAudio1.5",
+    "experiment": "E21",
+    "required_types": "CLIP、STRING、INT、FLOAT、COMBO、BOOLEAN",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ARVideoI2V",
+    "experiment": "E10",
+    "required_types": "MODEL、VAE、IMAGE、INT",
+    "output_types": "MODEL、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "BerniniConditioning",
+    "experiment": "E18",
+    "required_types": "CONDITIONING、VAE、INT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TextEncodeBooguEdit",
+    "experiment": "E05",
+    "required_types": "CLIP、STRING、VAE、COMFY_AUTOGROW_V3",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ControlNetApplyAdvanced",
+    "experiment": "B13",
+    "required_types": "CONDITIONING、CONTROL_NET、IMAGE、FLOAT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ControlNetApply",
+    "experiment": "B13",
+    "required_types": "CONDITIONING、CONTROL_NET、IMAGE、FLOAT",
+    "output_types": "CONDITIONING",
+    "flags": "已弃用",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ControlNetInpaintingAliMamaApply",
+    "experiment": "B13",
+    "required_types": "CONDITIONING、CONTROL_NET、VAE、IMAGE、MASK、FLOAT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ControlNetApplySD3",
+    "experiment": "B13",
+    "required_types": "CONDITIONING、CONTROL_NET、VAE、IMAGE、FLOAT",
+    "output_types": "CONDITIONING",
+    "flags": "已弃用",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SetUnionControlNetType",
+    "experiment": "B13",
+    "required_types": "CONTROL_NET、COMBO",
+    "output_types": "CONTROL_NET",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CosmosImageToVideoLatent",
+    "experiment": "E09",
+    "required_types": "VAE、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CosmosPredict2ImageToVideoLatent",
+    "experiment": "E09",
+    "required_types": "VAE、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPTextEncodeFlux",
+    "experiment": "E02",
+    "required_types": "CLIP、STRING、FLOAT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "FluxKontextMultiReferenceLatentMethod",
+    "experiment": "E02",
+    "required_types": "CONDITIONING、COMBO",
+    "output_types": "CONDITIONING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "FluxDisableGuidance",
+    "experiment": "E02",
+    "required_types": "CONDITIONING",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "FluxGuidance",
+    "experiment": "E02",
+    "required_types": "CONDITIONING、FLOAT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "FluxKontextImageScale",
+    "experiment": "E02",
+    "required_types": "IMAGE",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "GLIGENTextBoxApply",
+    "experiment": "B14",
+    "required_types": "CONDITIONING、CLIP、GLIGEN、STRING、INT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPTextEncodeHiDream",
+    "experiment": "E04",
+    "required_types": "CLIP、STRING",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "HiDreamO1ReferenceImages",
+    "experiment": "E04",
+    "required_types": "CONDITIONING、COMFY_AUTOGROW_V3",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Hunyuan3Dv2Conditioning",
+    "experiment": "E17",
+    "required_types": "CLIP_VISION_OUTPUT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Hunyuan3Dv2ConditioningMultiView",
+    "experiment": "E17",
+    "required_types": "无",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPTextEncodeHunyuanDiT",
+    "experiment": "E05",
+    "required_types": "CLIP、STRING",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "HunyuanRefinerLatent",
+    "experiment": "E08",
+    "required_types": "CONDITIONING、LATENT、FLOAT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "HunyuanVideo15SuperResolution",
+    "experiment": "E08",
+    "required_types": "CONDITIONING、LATENT、FLOAT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "HunyuanImageToVideo",
+    "experiment": "E08",
+    "required_types": "CONDITIONING、VAE、INT、COMBO",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "HunyuanVideo15ImageToVideo",
+    "experiment": "E08",
+    "required_types": "CONDITIONING、VAE、INT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TextEncodeHunyuanVideo_ImageToVideo",
+    "experiment": "E08",
+    "required_types": "CLIP、CLIP_VISION_OUTPUT、STRING、INT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "InstructPixToPixConditioning",
+    "experiment": "E06",
+    "required_types": "CONDITIONING、VAE、IMAGE",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TextEncodeJoyImageEdit",
+    "experiment": "E05",
+    "required_types": "CLIP、STRING",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPTextEncodeKandinsky5",
+    "experiment": "E09",
+    "required_types": "CLIP、STRING",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Kandinsky5ImageToVideo",
+    "experiment": "E09",
+    "required_types": "CONDITIONING、VAE、INT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LotusConditioning",
+    "experiment": "E06",
+    "required_types": "无",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "GetICLoRAParameters",
+    "experiment": "E07",
+    "required_types": "MODEL",
+    "output_types": "IC_LORA_PARAMETERS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVReferenceAudio",
+    "experiment": "E07",
+    "required_types": "MODEL、CONDITIONING、AUDIO、VAE、FLOAT",
+    "output_types": "MODEL、CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVAddGuide",
+    "experiment": "E07",
+    "required_types": "CONDITIONING、VAE、LATENT、IMAGE、INT、FLOAT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVConditioning",
+    "experiment": "E07",
+    "required_types": "CONDITIONING、FLOAT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVCropGuides",
+    "experiment": "E07",
+    "required_types": "CONDITIONING、LATENT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVImgToVideo",
+    "experiment": "E07",
+    "required_types": "CONDITIONING、VAE、IMAGE、INT、FLOAT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVImgToVideoInplace",
+    "experiment": "E07",
+    "required_types": "VAE、IMAGE、LATENT、FLOAT、BOOLEAN",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPTextEncodeLumina2",
+    "experiment": "E05",
+    "required_types": "COMBO、STRING、CLIP",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TextEncodeMageFlowEdit",
+    "experiment": "E05",
+    "required_types": "CLIP、STRING、COMFY_AUTOGROW_V3、INT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MiniMaxH3AddGuide",
+    "experiment": "D03",
+    "required_types": "CONDITIONING、LATENT、INT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MiniMaxH3ImageToVideo",
+    "experiment": "D02",
+    "required_types": "CLIP、VAE、STRING、INT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MiniMaxH3ReferenceToVideo",
+    "experiment": "D01",
+    "required_types": "CLIP、VAE、STRING、INT、COMBO",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MiniMaxMusic3TextEncode",
+    "experiment": "E21",
+    "required_types": "CLIP、STRING、INT、FLOAT",
+    "output_types": "CONDITIONING、FLOAT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PhotoMakerEncode",
+    "experiment": "B14",
+    "required_types": "PHOTOMAKER、IMAGE、CLIP、STRING",
+    "output_types": "CONDITIONING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPTextEncodePixArtAlpha",
+    "experiment": "E05",
+    "required_types": "INT、STRING、CLIP",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TextEncodeQwenImageEdit",
+    "experiment": "E03",
+    "required_types": "CLIP、STRING",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TextEncodeQwenImageEditPlus",
+    "experiment": "E03",
+    "required_types": "CLIP、STRING",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ConditioningStableAudio",
+    "experiment": "E21",
+    "required_types": "CONDITIONING、FLOAT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "StableCascade_StageB_Conditioning",
+    "experiment": "E06",
+    "required_types": "CONDITIONING、LATENT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPTextEncodeSD3",
+    "experiment": "E01",
+    "required_types": "CLIP、STRING、COMBO",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPTextEncodeSDXLRefiner",
+    "experiment": "E01",
+    "required_types": "FLOAT、INT、STRING、CLIP",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPTextEncodeSDXL",
+    "experiment": "E01",
+    "required_types": "CLIP、INT、STRING",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SD_4XUpscale_Conditioning",
+    "experiment": "E06",
+    "required_types": "IMAGE、CONDITIONING、FLOAT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SVD_img2vid_Conditioning",
+    "experiment": "E09",
+    "required_types": "CLIP_VISION、IMAGE、VAE、INT、FLOAT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SV3D_Conditioning",
+    "experiment": "E20",
+    "required_types": "CLIP_VISION、IMAGE、VAE、INT、FLOAT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "StableZero123_Conditioning",
+    "experiment": "E20",
+    "required_types": "CLIP_VISION、IMAGE、VAE、INT、FLOAT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "StableZero123_Conditioning_Batched",
+    "experiment": "E20",
+    "required_types": "CLIP_VISION、IMAGE、VAE、INT、FLOAT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ConditioningAverage",
+    "experiment": "B11",
+    "required_types": "CONDITIONING、FLOAT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ConditioningCombine",
+    "experiment": "B11",
+    "required_types": "CONDITIONING",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ConditioningConcat",
+    "experiment": "B11",
+    "required_types": "CONDITIONING",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ConditioningMultiply",
+    "experiment": "B11",
+    "required_types": "CONDITIONING、FLOAT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ConditioningSetAreaStrength",
+    "experiment": "B11",
+    "required_types": "CONDITIONING、FLOAT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ConditioningSetAreaPercentageVideo",
+    "experiment": "B11",
+    "required_types": "CONDITIONING、FLOAT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ConditioningSetAreaPercentage",
+    "experiment": "B11",
+    "required_types": "CONDITIONING、FLOAT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ConditioningSetArea",
+    "experiment": "B11",
+    "required_types": "CONDITIONING、INT、FLOAT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ConditioningSetMask",
+    "experiment": "B11",
+    "required_types": "CONDITIONING、MASK、FLOAT、COMBO",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ConditioningZeroOut",
+    "experiment": "B11",
+    "required_types": "CONDITIONING",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ConditioningSetTimestepRange",
+    "experiment": "B11",
+    "required_types": "CONDITIONING、FLOAT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Pixal3DConditioning",
+    "experiment": "E18",
+    "required_types": "CLIP_VISION、IMAGE、FLOAT",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Trellis2UpsampleStage",
+    "experiment": "E18",
+    "required_types": "CONDITIONING、LATENT、VAE、INT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Trellis2Conditioning",
+    "experiment": "E18",
+    "required_types": "CLIP_VISION、IMAGE",
+    "output_types": "CONDITIONING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Trellis2ShapeStage",
+    "experiment": "E18",
+    "required_types": "CONDITIONING、VOXEL",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Trellis2TextureStage",
+    "experiment": "E18",
+    "required_types": "CONDITIONING、LATENT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TripoSplatConditioning",
+    "experiment": "E19",
+    "required_types": "CLIP_VISION、VAE、IMAGE",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TripoSplatPreprocessImage",
+    "experiment": "E19",
+    "required_types": "IMAGE、MASK、INT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VOIDInpaintConditioning",
+    "experiment": "E16",
+    "required_types": "CONDITIONING、VAE、IMAGE、MASK、INT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Wan22ImageToVideoLatent",
+    "experiment": "E11",
+    "required_types": "VAE、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanFirstLastFrameToVideo",
+    "experiment": "E11",
+    "required_types": "CONDITIONING、VAE、INT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanImageToVideo",
+    "experiment": "E11",
+    "required_types": "CONDITIONING、VAE、INT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanAnimate2Cache",
+    "experiment": "E14",
+    "required_types": "MODEL、COMBO",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanAnimate2ToVideo",
+    "experiment": "E14",
+    "required_types": "CONDITIONING、VAE、INT、FLOAT",
+    "output_types": "CONDITIONING、LATENT、INT",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanAnimateToVideo",
+    "experiment": "E14",
+    "required_types": "CONDITIONING、VAE、INT",
+    "output_types": "CONDITIONING、LATENT、INT",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanCameraEmbedding",
+    "experiment": "E12",
+    "required_types": "COMBO、INT",
+    "output_types": "WAN_CAMERA_EMBEDDING、INT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanCameraImageToVideo",
+    "experiment": "E12",
+    "required_types": "CONDITIONING、VAE、INT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanDancerEncodeAudio",
+    "experiment": "E15",
+    "required_types": "AUDIO、INT、FLOAT",
+    "output_types": "AUDIO_ENCODER_OUTPUT、STRING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanDancerVideo",
+    "experiment": "E15",
+    "required_types": "CONDITIONING、VAE、INT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Wan22FunControlToVideo",
+    "experiment": "E13",
+    "required_types": "CONDITIONING、VAE、INT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanFunControlToVideo",
+    "experiment": "E13",
+    "required_types": "CONDITIONING、VAE、INT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanFunInpaintToVideo",
+    "experiment": "E13",
+    "required_types": "CONDITIONING、VAE、INT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanHuMoImageToVideo",
+    "experiment": "E15",
+    "required_types": "CONDITIONING、VAE、INT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanInfiniteTalkToVideo",
+    "experiment": "E15",
+    "required_types": "COMFY_DYNAMICCOMBO_V3、MODEL、MODEL_PATCH、CONDITIONING、VAE、INT、AUDIO_ENCODER_OUTPUT、FLOAT",
+    "output_types": "MODEL、CONDITIONING、LATENT、INT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "GenerateTracks",
+    "experiment": "E12",
+    "required_types": "INT、FLOAT、BOOLEAN、COMBO",
+    "output_types": "TRACKS、INT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanMoveConcatTrack",
+    "experiment": "E12",
+    "required_types": "TRACKS",
+    "output_types": "TRACKS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanMoveTracksFromCoords",
+    "experiment": "E12",
+    "required_types": "无",
+    "output_types": "TRACKS、INT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanMoveTrackToVideo",
+    "experiment": "E12",
+    "required_types": "CONDITIONING、VAE、FLOAT、INT、IMAGE",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanMoveVisualizeTracks",
+    "experiment": "E12",
+    "required_types": "IMAGE、INT、FLOAT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanTrackToVideo",
+    "experiment": "E12",
+    "required_types": "CONDITIONING、VAE、STRING、INT、FLOAT、IMAGE",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanPhantomSubjectToVideo",
+    "experiment": "E13",
+    "required_types": "CONDITIONING、VAE、INT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SCAIL2ColoredMask",
+    "experiment": "E14",
+    "required_types": "SAM3_TRACK_DATA、STRING、COMBO、BOOLEAN",
+    "output_types": "IMAGE",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanSCAILToVideo",
+    "experiment": "E14",
+    "required_types": "CONDITIONING、VAE、INT、FLOAT",
+    "output_types": "CONDITIONING、LATENT、INT",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanSoundImageToVideo",
+    "experiment": "E15",
+    "required_types": "CONDITIONING、VAE、INT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanSoundImageToVideoExtend",
+    "experiment": "E15",
+    "required_types": "CONDITIONING、VAE、INT、LATENT",
+    "output_types": "CONDITIONING、LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanVaceToVideo",
+    "experiment": "E13",
+    "required_types": "CONDITIONING、VAE、INT、FLOAT",
+    "output_types": "CONDITIONING、LATENT、INT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TextEncodeZImageOmni",
+    "experiment": "E05",
+    "required_types": "CLIP、STRING、BOOLEAN",
+    "output_types": "CONDITIONING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyLatentAudio",
+    "experiment": "E21",
+    "required_types": "FLOAT、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyLatentImage",
+    "experiment": "B03",
+    "required_types": "INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentComposite",
+    "experiment": "B06",
+    "required_types": "LATENT、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentCompositeMasked",
+    "experiment": "B06",
+    "required_types": "LATENT、INT、BOOLEAN",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoadLatent",
+    "experiment": "B06",
+    "required_types": "COMBO",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SaveLatent",
+    "experiment": "B06",
+    "required_types": "LATENT、STRING",
+    "output_types": "LATENT",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SetLatentNoiseMask",
+    "experiment": "B05",
+    "required_types": "LATENT、MASK",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TrimVideoLatent",
+    "experiment": "C02",
+    "required_types": "LATENT、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentUpscale",
+    "experiment": "B06",
+    "required_types": "LATENT、COMBO、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentUpscaleBy",
+    "experiment": "B06",
+    "required_types": "LATENT、COMBO、FLOAT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VAEDecode",
+    "experiment": "B02",
+    "required_types": "LATENT、VAE",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VAEDecodeTiled",
+    "experiment": "B02",
+    "required_types": "LATENT、VAE、INT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VAEDecodeAudio",
+    "experiment": "D01",
+    "required_types": "LATENT、VAE",
+    "output_types": "AUDIO",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VAEDecodeAudioTiled",
+    "experiment": "D01",
+    "required_types": "LATENT、VAE、INT",
+    "output_types": "AUDIO",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VAEEncode",
+    "experiment": "B02",
+    "required_types": "IMAGE、VAE",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VAEEncodeForInpaint",
+    "experiment": "B05",
+    "required_types": "IMAGE、VAE、MASK、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VAEEncodeTiled",
+    "experiment": "B02",
+    "required_types": "IMAGE、VAE、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VAEEncodeAudio",
+    "experiment": "E21",
+    "required_types": "AUDIO、VAE",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyAceStepLatentAudio",
+    "experiment": "E21",
+    "required_types": "FLOAT、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyAceStep1.5LatentAudio",
+    "experiment": "E21",
+    "required_types": "FLOAT、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentAdd",
+    "experiment": "B06",
+    "required_types": "LATENT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentBatchSeedBehavior",
+    "experiment": "B06",
+    "required_types": "LATENT、COMBO",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentConcat",
+    "experiment": "B06",
+    "required_types": "LATENT、COMBO",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentCut",
+    "experiment": "B06",
+    "required_types": "LATENT、COMBO、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentCutToBatch",
+    "experiment": "B06",
+    "required_types": "LATENT、COMBO、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentInterpolate",
+    "experiment": "B06",
+    "required_types": "LATENT、FLOAT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentMultiply",
+    "experiment": "B06",
+    "required_types": "LATENT、FLOAT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentSubtract",
+    "experiment": "B06",
+    "required_types": "LATENT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentApplyOperation",
+    "experiment": "B06",
+    "required_types": "LATENT、LATENT_OPERATION",
+    "output_types": "LATENT",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentApplyOperationCFG",
+    "experiment": "B06",
+    "required_types": "MODEL、LATENT_OPERATION",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentOperationSharpen",
+    "experiment": "B06",
+    "required_types": "INT、FLOAT",
+    "output_types": "LATENT_OPERATION",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentOperationTonemapReinhard",
+    "experiment": "B06",
+    "required_types": "FLOAT",
+    "output_types": "LATENT_OPERATION",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyARVideoLatent",
+    "experiment": "E10",
+    "required_types": "INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "BatchLatentsNode",
+    "experiment": "B06",
+    "required_types": "COMFY_AUTOGROW_V3",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentBatch",
+    "experiment": "B06",
+    "required_types": "LATENT",
+    "output_types": "LATENT",
+    "flags": "已弃用",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentFromBatch",
+    "experiment": "B06",
+    "required_types": "LATENT、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SeedVR2TemporalMerge",
+    "experiment": "E22",
+    "required_types": "LATENT、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "RebatchLatents",
+    "experiment": "B06",
+    "required_types": "LATENT、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "RepeatLatentBatch",
+    "experiment": "B06",
+    "required_types": "LATENT、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ReplaceVideoLatentFrames",
+    "experiment": "C02",
+    "required_types": "LATENT、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SeedVR2TemporalChunk",
+    "experiment": "E22",
+    "required_types": "LATENT、INT、COMFY_DYNAMICCOMBO_V3",
+    "output_types": "LATENT、INT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyChromaRadianceLatentImage",
+    "experiment": "E05",
+    "required_types": "INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyCosmosLatentVideo",
+    "experiment": "E09",
+    "required_types": "INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyFlux2LatentImage",
+    "experiment": "E02",
+    "required_types": "INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyHiDreamO1LatentImage",
+    "experiment": "E04",
+    "required_types": "INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "HunyuanVideo15LatentUpscaleWithModel",
+    "experiment": "E08",
+    "required_types": "LATENT_UPSCALE_MODEL、LATENT、COMBO、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyLatentHunyuan3Dv2",
+    "experiment": "E17",
+    "required_types": "INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VAEDecodeHunyuan3D",
+    "experiment": "E17",
+    "required_types": "LATENT、VAE、INT",
+    "output_types": "VOXEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyHunyuanImageLatent",
+    "experiment": "E05",
+    "required_types": "INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyHunyuanLatentVideo",
+    "experiment": "E08",
+    "required_types": "INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyHunyuanVideo15Latent",
+    "experiment": "E08",
+    "required_types": "INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVConcatAVLatent",
+    "experiment": "E07",
+    "required_types": "LATENT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyLTXVLatentVideo",
+    "experiment": "E07",
+    "required_types": "INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVAudioVAEDecode",
+    "experiment": "E07",
+    "required_types": "LATENT、VAE",
+    "output_types": "AUDIO",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVAudioVAEEncode",
+    "experiment": "E07",
+    "required_types": "AUDIO、VAE",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVEmptyLatentAudio",
+    "experiment": "E07",
+    "required_types": "INT、FLOAT,INT、VAE",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVLatentUpsampler",
+    "experiment": "E07",
+    "required_types": "LATENT、LATENT_UPSCALE_MODEL、VAE",
+    "output_types": "LATENT",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVSeparateAVLatent",
+    "experiment": "E07",
+    "required_types": "LATENT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyMiniMaxH3LatentAV",
+    "experiment": "D02",
+    "required_types": "INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyMiniMaxMusic3LatentAudio",
+    "experiment": "E21",
+    "required_types": "FLOAT、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyMochiLatentVideo",
+    "experiment": "E09",
+    "required_types": "INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyQwenImageLayeredLatentImage",
+    "experiment": "E03",
+    "required_types": "INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "StableCascade_EmptyLatentImage",
+    "experiment": "E06",
+    "required_types": "INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "StableCascade_StageC_VAEEncode",
+    "experiment": "E06",
+    "required_types": "IMAGE、VAE、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptySD3LatentImage",
+    "experiment": "E01",
+    "required_types": "INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentCrop",
+    "experiment": "B06",
+    "required_types": "LATENT、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentFlip",
+    "experiment": "B06",
+    "required_types": "LATENT、COMBO",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentRotate",
+    "experiment": "B06",
+    "required_types": "LATENT、COMBO",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "EmptyTrellis2LatentStructure",
+    "experiment": "E18",
+    "required_types": "INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VaeDecodeShapeTrellis",
+    "experiment": "E18",
+    "required_types": "LATENT、VAE",
+    "output_types": "MESH、SHAPE_SUBDIVIDES",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VaeDecodeStructureTrellis2",
+    "experiment": "E18",
+    "required_types": "LATENT、VAE、COMBO",
+    "output_types": "VOXEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VaeDecodeTextureTrellis",
+    "experiment": "E18",
+    "required_types": "LATENT、VAE、SHAPE_SUBDIVIDES",
+    "output_types": "VOXEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VAEDecodeTripoSplat",
+    "experiment": "E19",
+    "required_types": "LATENT、VAE、INT",
+    "output_types": "SPLAT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TripoSplatSamplingPreview",
+    "experiment": "E19",
+    "required_types": "MODEL、VAE、INT、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VOIDWarpedNoise",
+    "experiment": "E16",
+    "required_types": "OPTICAL_FLOW、IMAGE、INT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VOIDWarpedNoiseSource",
+    "experiment": "E16",
+    "required_types": "LATENT",
+    "output_types": "NOISE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "AudioEncoderLoader",
+    "experiment": "E15",
+    "required_types": "COMBO",
+    "output_types": "AUDIO_ENCODER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoadBackgroundRemovalModel",
+    "experiment": "F06",
+    "required_types": "COMBO",
+    "output_types": "BACKGROUND_REMOVAL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CheckpointLoaderSimple",
+    "experiment": "B01",
+    "required_types": "COMBO",
+    "output_types": "MODEL、CLIP、VAE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageOnlyCheckpointLoader",
+    "experiment": "B01",
+    "required_types": "COMBO",
+    "output_types": "MODEL、CLIP_VISION、VAE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CheckpointLoader",
+    "experiment": "B01",
+    "required_types": "COMBO",
+    "output_types": "MODEL、CLIP、VAE",
+    "flags": "已弃用",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPLoader",
+    "experiment": "B01",
+    "required_types": "COMBO",
+    "output_types": "CLIP",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "DualCLIPLoader",
+    "experiment": "B01",
+    "required_types": "COMBO",
+    "output_types": "CLIP",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "QuadrupleCLIPLoader",
+    "experiment": "B01",
+    "required_types": "COMBO",
+    "output_types": "CLIP",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TripleCLIPLoader",
+    "experiment": "B01",
+    "required_types": "COMBO",
+    "output_types": "CLIP",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPVisionLoader",
+    "experiment": "B14",
+    "required_types": "COMBO",
+    "output_types": "CLIP_VISION",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ControlNetLoader",
+    "experiment": "B13",
+    "required_types": "COMBO",
+    "output_types": "CONTROL_NET",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "DiffControlNetLoader",
+    "experiment": "B13",
+    "required_types": "MODEL、COMBO",
+    "output_types": "CONTROL_NET",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoadDA3Model",
+    "experiment": "F02",
+    "required_types": "COMBO",
+    "output_types": "DA3_MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "DiffusersLoader",
+    "experiment": "B01",
+    "required_types": "COMBO",
+    "output_types": "MODEL、CLIP、VAE",
+    "flags": "已弃用",
+    "status": "待执行"
+  },
+  {
+    "class_name": "UNETLoader",
+    "experiment": "B01",
+    "required_types": "COMBO",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoadMediaPipeFaceLandmarker",
+    "experiment": "F11",
+    "required_types": "COMBO",
+    "output_types": "FACE_DETECTION_MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "FrameInterpolationModelLoader",
+    "experiment": "C04",
+    "required_types": "COMBO",
+    "output_types": "INTERP_MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "GLIGENLoader",
+    "experiment": "B14",
+    "required_types": "COMBO",
+    "output_types": "GLIGEN",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "HypernetworkLoader",
+    "experiment": "E24",
+    "required_types": "MODEL、COMBO、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LatentUpscaleModelLoader",
+    "experiment": "C04",
+    "required_types": "COMBO",
+    "output_types": "LATENT_UPSCALE_MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoraLoaderModelOnly",
+    "experiment": "B12",
+    "required_types": "MODEL、COMBO、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoraLoaderBypass",
+    "experiment": "B12",
+    "required_types": "MODEL、CLIP、COMBO、FLOAT",
+    "output_types": "MODEL、CLIP",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoraLoaderBypassModelOnly",
+    "experiment": "B12",
+    "required_types": "MODEL、COMBO、FLOAT",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoraLoader",
+    "experiment": "B12",
+    "required_types": "MODEL、CLIP、COMBO、FLOAT",
+    "output_types": "MODEL、CLIP",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoraModelLoader",
+    "experiment": "B12",
+    "required_types": "MODEL、LORA_MODEL、FLOAT、BOOLEAN",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXAVTextEncoderLoader",
+    "experiment": "E07",
+    "required_types": "COMBO",
+    "output_types": "CLIP",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVAudioVAELoader",
+    "experiment": "E07",
+    "required_types": "COMBO",
+    "output_types": "VAE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelPatchLoader",
+    "experiment": "E24",
+    "required_types": "COMBO",
+    "output_types": "MODEL_PATCH",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoadMoGeModel",
+    "experiment": "F02",
+    "required_types": "COMBO",
+    "output_types": "MOGE_MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "OpticalFlowLoader",
+    "experiment": "E16",
+    "required_types": "COMBO",
+    "output_types": "OPTICAL_FLOW",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PhotoMakerLoader",
+    "experiment": "B14",
+    "required_types": "COMBO",
+    "output_types": "PHOTOMAKER",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "StyleModelLoader",
+    "experiment": "B14",
+    "required_types": "COMBO",
+    "output_types": "STYLE_MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "unCLIPCheckpointLoader",
+    "experiment": "B14",
+    "required_types": "COMBO",
+    "output_types": "MODEL、CLIP、VAE、CLIP_VISION",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "UpscaleModelLoader",
+    "experiment": "C04",
+    "required_types": "COMBO",
+    "output_types": "UPSCALE_MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VAELoader",
+    "experiment": "B01",
+    "required_types": "COMBO",
+    "output_types": "VAE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPMergeAdd",
+    "experiment": "G03",
+    "required_types": "CLIP",
+    "output_types": "CLIP",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPMergeSimple",
+    "experiment": "G03",
+    "required_types": "CLIP、FLOAT",
+    "output_types": "CLIP",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPMergeSubtract",
+    "experiment": "G03",
+    "required_types": "CLIP、FLOAT",
+    "output_types": "CLIP",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CLIPSave",
+    "experiment": "G03",
+    "required_types": "CLIP、STRING",
+    "output_types": "无",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageOnlyCheckpointSave",
+    "experiment": "G03",
+    "required_types": "MODEL、CLIP_VISION、VAE、STRING",
+    "output_types": "无",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeAdd",
+    "experiment": "G03",
+    "required_types": "MODEL",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeBlocks",
+    "experiment": "G03",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeSimple",
+    "experiment": "G03",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeSubtract",
+    "experiment": "G03",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelSave",
+    "experiment": "G03",
+    "required_types": "MODEL、STRING",
+    "output_types": "无",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CheckpointSave",
+    "experiment": "G03",
+    "required_types": "MODEL、CLIP、VAE、STRING",
+    "output_types": "无",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SaveLoRA",
+    "experiment": "G03",
+    "required_types": "LORA_MODEL、STRING",
+    "output_types": "无",
+    "flags": "实验性；输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VAESave",
+    "experiment": "G03",
+    "required_types": "VAE、STRING",
+    "output_types": "无",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeAuraflow",
+    "experiment": "G03",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeCosmos14B",
+    "experiment": "G03",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeCosmos7B",
+    "experiment": "G03",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeCosmosPredict2_14B",
+    "experiment": "G03",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeCosmosPredict2_2B",
+    "experiment": "G03",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeFlux1",
+    "experiment": "G03",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeKrea2",
+    "experiment": "G03",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeLTXV",
+    "experiment": "G03",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeMochiPreview",
+    "experiment": "G03",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeQwenImage",
+    "experiment": "G03",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeSD1",
+    "experiment": "G03",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeSD2",
+    "experiment": "G03",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeSD35_Large",
+    "experiment": "G03",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeSD3_2B",
+    "experiment": "G03",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeSDXL",
+    "experiment": "G03",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelMergeWAN2_1",
+    "experiment": "G03",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ContextWindowsManual",
+    "experiment": "G01",
+    "required_types": "MODEL、INT、COMBO、BOOLEAN、STRING",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVContextWindows",
+    "experiment": "G01",
+    "required_types": "MODEL、INT、COMBO、BOOLEAN",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelAttentionBackend",
+    "experiment": "G01",
+    "required_types": "MODEL、COMBO",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelNoiseScale",
+    "experiment": "G01",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelSamplingAuraFlow",
+    "experiment": "G01",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelSamplingContinuousEDM",
+    "experiment": "G01",
+    "required_types": "MODEL、COMBO、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelSamplingContinuousV",
+    "experiment": "G01",
+    "required_types": "MODEL、COMBO、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelSamplingDiscrete",
+    "experiment": "G01",
+    "required_types": "MODEL、COMBO、BOOLEAN",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "RenormCFG",
+    "experiment": "G01",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "RescaleCFG",
+    "experiment": "G01",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ScaleROPE",
+    "experiment": "G01",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanContextWindowsManual",
+    "experiment": "G01",
+    "required_types": "MODEL、INT、COMBO、BOOLEAN",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ChromaRadianceOptions",
+    "experiment": "G01",
+    "required_types": "MODEL、BOOLEAN、FLOAT、INT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "USOStyleReference",
+    "experiment": "E02",
+    "required_types": "MODEL、MODEL_PATCH、CLIP_VISION_OUTPUT",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelSamplingFlux",
+    "experiment": "G01",
+    "required_types": "MODEL、FLOAT、INT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "HiDreamO1PatchSeamSmoothing",
+    "experiment": "G01",
+    "required_types": "MODEL、FLOAT、COMBO",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelSamplingLTXV",
+    "experiment": "G01",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MiniMaxH3SigmaShift",
+    "experiment": "D04",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "QwenImageDiffsynthControlnet",
+    "experiment": "E03",
+    "required_types": "MODEL、MODEL_PATCH、VAE、IMAGE、FLOAT",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelSamplingStableCascade",
+    "experiment": "G01",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ModelSamplingSD3",
+    "experiment": "G01",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SUPIRApply",
+    "experiment": "E22",
+    "required_types": "MODEL、MODEL_PATCH、VAE、IMAGE、FLOAT",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Epsilon Scaling",
+    "experiment": "G01",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "FreeU",
+    "experiment": "G01",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "FreeU_V2",
+    "experiment": "G01",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "HyperTile",
+    "experiment": "G01",
+    "required_types": "MODEL、INT、BOOLEAN",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PatchModelAddDownscale",
+    "experiment": "G01",
+    "required_types": "MODEL、INT、FLOAT、BOOLEAN、COMBO",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PerturbedAttentionGuidance",
+    "experiment": "G01",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TomePatchModel",
+    "experiment": "G01",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TemporalScoreRescaling",
+    "experiment": "G01",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "WanUni3CControlnetApply",
+    "experiment": "E13",
+    "required_types": "MODEL、MODEL_PATCH、VAE、IMAGE、FLOAT",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ZImageFunControlnet",
+    "experiment": "E05",
+    "required_types": "MODEL、MODEL_PATCH、VAE、FLOAT",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "KSampler",
+    "experiment": "B03",
+    "required_types": "MODEL、INT、FLOAT、COMBO、CONDITIONING、LATENT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "KSamplerAdvanced",
+    "experiment": "B04",
+    "required_types": "MODEL、COMBO、INT、FLOAT、CONDITIONING、LATENT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "APG",
+    "experiment": "B10",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SamplerCustom",
+    "experiment": "B07",
+    "required_types": "MODEL、BOOLEAN、INT、FLOAT、CONDITIONING、SAMPLER、SIGMAS、LATENT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SamplerCustomAdvanced",
+    "experiment": "B07",
+    "required_types": "NOISE、GUIDER、SAMPLER、SIGMAS、LATENT",
+    "output_types": "LATENT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "BasicGuider",
+    "experiment": "B07",
+    "required_types": "MODEL、CONDITIONING",
+    "output_types": "GUIDER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CFGGuider",
+    "experiment": "B07",
+    "required_types": "MODEL、CONDITIONING、FLOAT",
+    "output_types": "GUIDER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CFGOverride",
+    "experiment": "B10",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "DualCFGGuider",
+    "experiment": "B10",
+    "required_types": "MODEL、CONDITIONING、FLOAT、COMBO",
+    "output_types": "GUIDER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "DualModelGuider",
+    "experiment": "B10",
+    "required_types": "MODEL、CONDITIONING、FLOAT",
+    "output_types": "GUIDER",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVDualCFGGuider",
+    "experiment": "B10",
+    "required_types": "MODEL、CONDITIONING、FLOAT",
+    "output_types": "GUIDER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VideoLinearCFGGuidance",
+    "experiment": "B10",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VideoTriangleCFGGuidance",
+    "experiment": "B10",
+    "required_types": "MODEL、FLOAT",
+    "output_types": "MODEL",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "AddNoise",
+    "experiment": "B07",
+    "required_types": "MODEL、NOISE、SIGMAS、LATENT",
+    "output_types": "LATENT",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "DisableNoise",
+    "experiment": "B07",
+    "required_types": "无",
+    "output_types": "NOISE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "RandomNoise",
+    "experiment": "B07",
+    "required_types": "INT",
+    "output_types": "NOISE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "KSamplerSelect",
+    "experiment": "B07",
+    "required_types": "COMBO",
+    "output_types": "SAMPLER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SamplerARVideo",
+    "experiment": "E10",
+    "required_types": "INT",
+    "output_types": "SAMPLER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SamplerDPMAdaptative",
+    "experiment": "B09",
+    "required_types": "INT、FLOAT",
+    "output_types": "SAMPLER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SamplerDPMPP_2M_SDE",
+    "experiment": "B09",
+    "required_types": "COMBO、FLOAT",
+    "output_types": "SAMPLER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SamplerDPMPP_2S_Ancestral",
+    "experiment": "B09",
+    "required_types": "FLOAT",
+    "output_types": "SAMPLER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SamplerDPMPP_3M_SDE",
+    "experiment": "B09",
+    "required_types": "FLOAT、COMBO",
+    "output_types": "SAMPLER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SamplerDPMPP_SDE",
+    "experiment": "B09",
+    "required_types": "FLOAT、COMBO",
+    "output_types": "SAMPLER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SamplerER_SDE",
+    "experiment": "B09",
+    "required_types": "COMBO、INT、FLOAT",
+    "output_types": "SAMPLER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SamplerEulerAncestral",
+    "experiment": "B09",
+    "required_types": "FLOAT",
+    "output_types": "SAMPLER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SamplerEulerAncestralCFGPP",
+    "experiment": "B09",
+    "required_types": "FLOAT",
+    "output_types": "SAMPLER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SamplerLCM",
+    "experiment": "B09",
+    "required_types": "FLOAT",
+    "output_types": "SAMPLER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SamplerLCMUpscale",
+    "experiment": "B09",
+    "required_types": "FLOAT、INT、COMBO",
+    "output_types": "SAMPLER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SamplerLMS",
+    "experiment": "B09",
+    "required_types": "INT",
+    "output_types": "SAMPLER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SamplerSASolver",
+    "experiment": "B09",
+    "required_types": "MODEL、FLOAT、INT、BOOLEAN",
+    "output_types": "SAMPLER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SamplerSEEDS2",
+    "experiment": "B09",
+    "required_types": "COMBO、FLOAT",
+    "output_types": "SAMPLER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VOIDSampler",
+    "experiment": "E16",
+    "required_types": "无",
+    "output_types": "SAMPLER",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "AlignYourStepsScheduler",
+    "experiment": "B08",
+    "required_types": "COMBO、INT、FLOAT",
+    "output_types": "SIGMAS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "BasicScheduler",
+    "experiment": "B07",
+    "required_types": "MODEL、COMBO、INT、FLOAT",
+    "output_types": "SIGMAS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "BetaSamplingScheduler",
+    "experiment": "B08",
+    "required_types": "MODEL、INT、FLOAT",
+    "output_types": "SIGMAS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ExponentialScheduler",
+    "experiment": "B08",
+    "required_types": "INT、FLOAT",
+    "output_types": "SIGMAS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Flux2Scheduler",
+    "experiment": "E02",
+    "required_types": "INT",
+    "output_types": "SIGMAS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "GITSScheduler",
+    "experiment": "B08",
+    "required_types": "FLOAT、INT",
+    "output_types": "SIGMAS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Ideogram4Scheduler",
+    "experiment": "E23",
+    "required_types": "INT、FLOAT",
+    "output_types": "SIGMAS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "KarrasScheduler",
+    "experiment": "B08",
+    "required_types": "INT、FLOAT",
+    "output_types": "SIGMAS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LaplaceScheduler",
+    "experiment": "B08",
+    "required_types": "INT、FLOAT",
+    "output_types": "SIGMAS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVScheduler",
+    "experiment": "E07",
+    "required_types": "INT、FLOAT、BOOLEAN",
+    "output_types": "SIGMAS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "OptimalStepsScheduler",
+    "experiment": "B08",
+    "required_types": "COMBO、INT、FLOAT",
+    "output_types": "SIGMAS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PolyexponentialScheduler",
+    "experiment": "B08",
+    "required_types": "INT、FLOAT",
+    "output_types": "SIGMAS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SDTurboScheduler",
+    "experiment": "B08",
+    "required_types": "MODEL、INT、FLOAT",
+    "output_types": "SIGMAS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VPScheduler",
+    "experiment": "B08",
+    "required_types": "INT、FLOAT",
+    "output_types": "SIGMAS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ExtendIntermediateSigmas",
+    "experiment": "B08",
+    "required_types": "SIGMAS、INT、FLOAT、COMBO",
+    "output_types": "SIGMAS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "FlipSigmas",
+    "experiment": "B08",
+    "required_types": "SIGMAS",
+    "output_types": "SIGMAS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ManualSigmas",
+    "experiment": "B08",
+    "required_types": "STRING",
+    "output_types": "SIGMAS",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SamplingPercentToSigma",
+    "experiment": "B08",
+    "required_types": "MODEL、FLOAT、BOOLEAN",
+    "output_types": "FLOAT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SetFirstSigma",
+    "experiment": "B08",
+    "required_types": "SIGMAS、FLOAT",
+    "output_types": "SIGMAS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SplitSigmas",
+    "experiment": "B08",
+    "required_types": "SIGMAS、INT",
+    "output_types": "SIGMAS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SplitSigmasDenoise",
+    "experiment": "B08",
+    "required_types": "SIGMAS、FLOAT",
+    "output_types": "SIGMAS",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoadTrainingDataset",
+    "experiment": "G05",
+    "required_types": "COMBO",
+    "output_types": "LATENT、CONDITIONING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MakeTrainingDataset",
+    "experiment": "G05",
+    "required_types": "IMAGE、VAE、CLIP",
+    "output_types": "LATENT、CONDITIONING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LossGraphNode",
+    "experiment": "G05",
+    "required_types": "LOSS_MAP、STRING",
+    "output_types": "无",
+    "flags": "实验性；输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ResolutionBucket",
+    "experiment": "G05",
+    "required_types": "LATENT、CONDITIONING",
+    "output_types": "LATENT、CONDITIONING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SaveTrainingDataset",
+    "experiment": "G05",
+    "required_types": "LATENT、CONDITIONING、STRING、INT",
+    "output_types": "无",
+    "flags": "实验性；输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TrainLoraNode",
+    "experiment": "G05",
+    "required_types": "MODEL、LATENT、CONDITIONING、INT、FLOAT、COMBO、BOOLEAN",
+    "output_types": "LORA_MODEL、LOSS_MAP、INT",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "AnimaLLLiteApply",
+    "experiment": "E24",
+    "required_types": "MODEL、MODEL_PATCH、IMAGE、FLOAT",
+    "output_types": "MODEL",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "AddTextPrefix",
+    "experiment": "A03",
+    "required_types": "STRING",
+    "output_types": "STRING",
+    "flags": "已弃用；实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "AddTextSuffix",
+    "experiment": "A03",
+    "required_types": "STRING",
+    "output_types": "STRING",
+    "flags": "已弃用；实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "BuildJsonPromptIdeogram",
+    "experiment": "A03",
+    "required_types": "ARRAY、STRING、COMFY_DYNAMICCOMBO_V3、COLORS",
+    "output_types": "DICT",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "StringCompare",
+    "experiment": "A03",
+    "required_types": "STRING、COMBO、BOOLEAN",
+    "output_types": "BOOLEAN",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "StringConcatenate",
+    "experiment": "A03",
+    "required_types": "STRING",
+    "output_types": "STRING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "StringContains",
+    "experiment": "A03",
+    "required_types": "STRING、BOOLEAN",
+    "output_types": "BOOLEAN",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ConvertArrayToString",
+    "experiment": "A03",
+    "required_types": "ARRAY、INT",
+    "output_types": "STRING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ConvertDictionaryToString",
+    "experiment": "A03",
+    "required_types": "DICT、INT",
+    "output_types": "STRING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CaseConverter",
+    "experiment": "A03",
+    "required_types": "STRING、COMBO",
+    "output_types": "STRING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TextToLowercase",
+    "experiment": "A03",
+    "required_types": "STRING",
+    "output_types": "STRING",
+    "flags": "已弃用；实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TextToUppercase",
+    "experiment": "A03",
+    "required_types": "STRING",
+    "output_types": "STRING",
+    "flags": "已弃用；实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TextOverlay",
+    "experiment": "A03",
+    "required_types": "IMAGE、STRING、FLOAT、COLOR、COMBO、BOOLEAN",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "RegexExtract",
+    "experiment": "A03",
+    "required_types": "STRING、COMBO、BOOLEAN、INT",
+    "output_types": "STRING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "JsonExtractString",
+    "experiment": "A03",
+    "required_types": "STRING",
+    "output_types": "STRING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "StringFormat",
+    "experiment": "A03",
+    "required_types": "COMFY_AUTOGROW_V3、STRING",
+    "output_types": "STRING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TextGenerateLTX2Prompt",
+    "experiment": "E23",
+    "required_types": "CLIP、STRING、INT、COMFY_DYNAMICCOMBO_V3",
+    "output_types": "STRING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TextGenerate",
+    "experiment": "E23",
+    "required_types": "CLIP、STRING、INT、COMFY_DYNAMICCOMBO_V3",
+    "output_types": "STRING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "RegexMatch",
+    "experiment": "A03",
+    "required_types": "STRING、BOOLEAN",
+    "output_types": "BOOLEAN",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "MergeTextLists",
+    "experiment": "A03",
+    "required_types": "STRING",
+    "output_types": "STRING",
+    "flags": "已弃用；实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "StringReplace",
+    "experiment": "A03",
+    "required_types": "STRING",
+    "output_types": "STRING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ReplaceText",
+    "experiment": "A03",
+    "required_types": "STRING",
+    "output_types": "STRING",
+    "flags": "已弃用；实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "RegexReplace",
+    "experiment": "A03",
+    "required_types": "STRING",
+    "output_types": "STRING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SaveText",
+    "experiment": "A03",
+    "required_types": "STRING、COMBO",
+    "output_types": "STRING",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "StripWhitespace",
+    "experiment": "A03",
+    "required_types": "STRING",
+    "output_types": "STRING",
+    "flags": "已弃用；实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "StringSubstring",
+    "experiment": "A03",
+    "required_types": "STRING、INT",
+    "output_types": "STRING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "StringLength",
+    "experiment": "A03",
+    "required_types": "STRING",
+    "output_types": "INT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "StringTrim",
+    "experiment": "A03",
+    "required_types": "STRING、COMBO",
+    "output_types": "STRING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "TruncateText",
+    "experiment": "A03",
+    "required_types": "STRING、INT",
+    "output_types": "STRING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ColorToRGBInt",
+    "experiment": "A02",
+    "required_types": "COLOR",
+    "output_types": "INT、COLOR、FLOAT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ComfyNumberConvert",
+    "experiment": "A02",
+    "required_types": "INT,FLOAT,STRING,BOOLEAN",
+    "output_types": "FLOAT、INT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CreateBoundingBoxes",
+    "experiment": "A10",
+    "required_types": "INT、BOUNDING_BOXES",
+    "output_types": "IMAGE、BOUNDING_BOX、ARRAY",
+    "flags": "实验性；输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CreateList",
+    "experiment": "A02",
+    "required_types": "COMFY_AUTOGROW_V3",
+    "output_types": "COMFY_MATCHTYPE_V3",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CurveEditor",
+    "experiment": "A02",
+    "required_types": "CURVE",
+    "output_types": "CURVE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CustomCombo",
+    "experiment": "A02",
+    "required_types": "COMBO",
+    "output_types": "STRING、INT",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ImageHistogram",
+    "experiment": "A06",
+    "required_types": "IMAGE",
+    "output_types": "HISTOGRAM",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ComfyMathExpression",
+    "experiment": "A02",
+    "required_types": "STRING、COMFY_AUTOGROW_V3",
+    "output_types": "FLOAT、INT、BOOLEAN",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PreviewAny",
+    "experiment": "A01",
+    "required_types": "*",
+    "output_types": "STRING",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ResolutionSelector",
+    "experiment": "A02",
+    "required_types": "COMBO、FLOAT、INT",
+    "output_types": "INT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SeedNode",
+    "experiment": "A02",
+    "required_types": "INT",
+    "output_types": "INT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ComfyAndNode",
+    "experiment": "A04",
+    "required_types": "COMFY_AUTOGROW_V3",
+    "output_types": "BOOLEAN",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ComfySwitchNode",
+    "experiment": "A04",
+    "required_types": "BOOLEAN、COMFY_MATCHTYPE_V3",
+    "output_types": "COMFY_MATCHTYPE_V3",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ComfyNotNode",
+    "experiment": "A04",
+    "required_types": "*",
+    "output_types": "BOOLEAN",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ComfyOrNode",
+    "experiment": "A04",
+    "required_types": "COMFY_AUTOGROW_V3",
+    "output_types": "BOOLEAN",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PrimitiveBoolean",
+    "experiment": "A02",
+    "required_types": "BOOLEAN",
+    "output_types": "BOOLEAN",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PrimitiveBoundingBox",
+    "experiment": "A10",
+    "required_types": "INT",
+    "output_types": "BOUNDING_BOX",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PrimitiveFloat",
+    "experiment": "A02",
+    "required_types": "FLOAT",
+    "output_types": "FLOAT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PrimitiveInt",
+    "experiment": "A02",
+    "required_types": "INT",
+    "output_types": "INT",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PrimitiveString",
+    "experiment": "A02",
+    "required_types": "STRING",
+    "output_types": "STRING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "PrimitiveStringMultiline",
+    "experiment": "A02",
+    "required_types": "STRING",
+    "output_types": "STRING",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "CreateVideo",
+    "experiment": "C01",
+    "required_types": "IMAGE、FLOAT",
+    "output_types": "VIDEO",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "GetVideoComponents",
+    "experiment": "C01",
+    "required_types": "VIDEO",
+    "output_types": "IMAGE、AUDIO、FLOAT、COMBO",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoadVideo",
+    "experiment": "C01",
+    "required_types": "COMBO",
+    "output_types": "VIDEO",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoadVideoDataSetFromFolder",
+    "experiment": "C05",
+    "required_types": "COMBO",
+    "output_types": "VIDEO",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LoadVideoTextDataSetFromFolder",
+    "experiment": "C05",
+    "required_types": "COMBO",
+    "output_types": "VIDEO、STRING",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "FrameInterpolate",
+    "experiment": "C04",
+    "required_types": "INTERP_MODEL、IMAGE、INT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VideoFrameSample",
+    "experiment": "C02",
+    "required_types": "VIDEO、INT、COMBO",
+    "output_types": "VIDEO",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SaveVideo",
+    "experiment": "C01",
+    "required_types": "VIDEO、STRING、COMFY_DYNAMICCOMBO_V3",
+    "output_types": "VIDEO",
+    "flags": "输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "SaveWEBM",
+    "experiment": "C01",
+    "required_types": "IMAGE、STRING、COMBO、FLOAT",
+    "output_types": "IMAGE",
+    "flags": "实验性；输出节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "Video Slice",
+    "experiment": "C02",
+    "required_types": "VIDEO、FLOAT、BOOLEAN",
+    "output_types": "VIDEO",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "ShuffleVideoDataset",
+    "experiment": "C05",
+    "required_types": "VIDEO、INT",
+    "output_types": "VIDEO",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "LTXVPreprocess",
+    "experiment": "E07",
+    "required_types": "IMAGE、INT",
+    "output_types": "IMAGE",
+    "flags": "普通节点",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VideoRandomTemporalCrop",
+    "experiment": "C02",
+    "required_types": "VIDEO、INT",
+    "output_types": "VIDEO",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "VideoTemporalCrop",
+    "experiment": "C02",
+    "required_types": "VIDEO、INT",
+    "output_types": "VIDEO",
+    "flags": "实验性",
+    "status": "待执行"
+  },
+  {
+    "class_name": "wanBlockSwap",
+    "experiment": "G06",
+    "required_types": "MODEL",
+    "output_types": "MODEL",
+    "flags": "已弃用",
+    "status": "待执行"
+  }
+]
